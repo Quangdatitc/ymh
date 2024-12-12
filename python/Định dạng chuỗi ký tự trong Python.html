@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)https://tek4.vn/khoa-hoc/lap-trinh-python-can-ban/dinh-dang-chuoi-ky-tu-trong-python -->
+<html style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace-tomorrow-night">.ace-tomorrow-night .ace_gutter {
+  background: #25282c;
+  color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_print-margin {
+  width: 1px;
+  background: #25282c
+}
+
+.ace-tomorrow-night {
+  background-color: #1D1F21;
+  color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_cursor {
+  color: #AEAFAD
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_selection {
+  background: #373B41
+}
+
+.ace-tomorrow-night.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #1D1F21;
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_step {
+  background: rgb(102, 82, 0)
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #4B4E55
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_active-line {
+  background: #282A2E
+}
+
+.ace-tomorrow-night .ace_gutter-active-line {
+  background-color: #282A2E
+}
+
+.ace-tomorrow-night .ace_marker-layer .ace_selected-word {
+  border: 1px solid #373B41
+}
+
+.ace-tomorrow-night .ace_invisible {
+  color: #4B4E55
+}
+
+.ace-tomorrow-night .ace_keyword,
+.ace-tomorrow-night .ace_meta,
+.ace-tomorrow-night .ace_storage,
+.ace-tomorrow-night .ace_storage.ace_type,
+.ace-tomorrow-night .ace_support.ace_type {
+  color: #B294BB
+}
+
+.ace-tomorrow-night .ace_keyword.ace_operator {
+  color: #8ABEB7
+}
+
+.ace-tomorrow-night .ace_constant.ace_character,
+.ace-tomorrow-night .ace_constant.ace_language,
+.ace-tomorrow-night .ace_constant.ace_numeric,
+.ace-tomorrow-night .ace_keyword.ace_other.ace_unit,
+.ace-tomorrow-night .ace_support.ace_constant,
+.ace-tomorrow-night .ace_variable.ace_parameter {
+  color: #DE935F
+}
+
+.ace-tomorrow-night .ace_constant.ace_other {
+  color: #CED1CF
+}
+
+.ace-tomorrow-night .ace_invalid {
+  color: #CED2CF;
+  background-color: #DF5F5F
+}
+
+.ace-tomorrow-night .ace_invalid.ace_deprecated {
+  color: #CED2CF;
+  background-color: #B798BF
+}
+
+.ace-tomorrow-night .ace_fold {
+  background-color: #81A2BE;
+  border-color: #C5C8C6
+}
+
+.ace-tomorrow-night .ace_entity.ace_name.ace_function,
+.ace-tomorrow-night .ace_support.ace_function,
+.ace-tomorrow-night .ace_variable {
+  color: #81A2BE
+}
+
+.ace-tomorrow-night .ace_support.ace_class,
+.ace-tomorrow-night .ace_support.ace_type {
+  color: #F0C674
+}
+
+.ace-tomorrow-night .ace_heading,
+.ace-tomorrow-night .ace_markup.ace_heading,
+.ace-tomorrow-night .ace_string {
+  color: #B5BD68
+}
+
+.ace-tomorrow-night .ace_entity.ace_name.ace_tag,
+.ace-tomorrow-night .ace_entity.ace_other.ace_attribute-name,
+.ace-tomorrow-night .ace_meta.ace_tag,
+.ace-tomorrow-night .ace_string.ace_regexp,
+.ace-tomorrow-night .ace_variable {
+  color: #CC6666
+}
+
+.ace-tomorrow-night .ace_comment {
+  color: #969896
+}
+
+.ace-tomorrow-night .ace_indent-guide {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYHB3d/8PAAOIAdULw8qMAAAAAElFTkSuQmCC) right repeat-y
+}
+
+.ace-tomorrow-night .ace_indent-guide-active {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQIW2PQ1dX9zzBz5sz/ABCcBFFentLlAAAAAElFTkSuQmCC) right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace-tomorrow-night */</style><style id="autocompletion.css">
+.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+    background-color: #CAD6FA;
+    z-index: 1;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+    background-color: #3a674e;
+}
+.ace_editor.ace_autocomplete .ace_line-hover {
+    border: 1px solid #abbffe;
+    margin-top: -1px;
+    background: rgba(233,233,253,0.4);
+    position: absolute;
+    z-index: 2;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_line-hover {
+    border: 1px solid rgba(109, 150, 13, 0.8);
+    background: rgba(58, 103, 78, 0.62);
+}
+.ace_completion-meta {
+    opacity: 0.5;
+    margin: 0 0.9em;
+}
+.ace_completion-message {
+    color: blue;
+}
+.ace_editor.ace_autocomplete .ace_completion-highlight{
+    color: #2d69c7;
+}
+.ace_dark.ace_editor.ace_autocomplete .ace_completion-highlight{
+    color: #93ca12;
+}
+.ace_editor.ace_autocomplete {
+    width: 300px;
+    z-index: 200000;
+    border: 1px lightgray solid;
+    position: fixed;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+    line-height: 1.4;
+    background: #fefefe;
+    color: #111;
+}
+.ace_dark.ace_editor.ace_autocomplete {
+    border: 1px #484747 solid;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51);
+    line-height: 1.4;
+    background: #25282c;
+    color: #c1c1c1;
+}
+.ace_autocomplete_right .ace_text-layer  {
+    width: calc(100% - 8px);
+}
+.ace_autocomplete_right .ace_line {
+    display: flex;
+}
+.ace_autocomplete_right .ace_completion-meta {
+    flex: 1;
+    text-align: right;
+}
+
+/*# sourceURL=ace/css/autocompletion.css */</style><style id="snippets.css">
+.ace_snippet-marker {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgba(194, 193, 208, 0.09);
+    border: 1px dotted rgba(211, 208, 235, 0.62);
+    position: absolute;
+}
+/*# sourceURL=ace/css/snippets.css */</style><style id="error_marker.css">
+    .error_widget_wrapper {
+        background: inherit;
+        color: inherit;
+        border:none
+    }
+    .error_widget {
+        border-top: solid 2px;
+        border-bottom: solid 2px;
+        margin: 5px 0;
+        padding: 10px 40px;
+        white-space: pre-wrap;
+    }
+    .error_widget.ace_error, .error_widget_arrow.ace_error{
+        border-color: #ff5a5a
+    }
+    .error_widget.ace_warning, .error_widget_arrow.ace_warning{
+        border-color: #F1D817
+    }
+    .error_widget.ace_info, .error_widget_arrow.ace_info{
+        border-color: #5a5a5a
+    }
+    .error_widget.ace_ok, .error_widget_arrow.ace_ok{
+        border-color: #5aaa5a
+    }
+    .error_widget_arrow {
+        position: absolute;
+        border: solid 5px;
+        border-top-color: transparent!important;
+        border-right-color: transparent!important;
+        border-left-color: transparent!important;
+        top: -5px;
+    }
+
+/*# sourceURL=ace/css/error_marker.css */</style><style id="ace-tm">.ace-tm .ace_gutter {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.ace-tm .ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace-tm .ace_fold {
+    background-color: #6B72E6;
+}
+
+.ace-tm {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.ace-tm .ace_cursor {
+  color: black;
+}
+        
+.ace-tm .ace_invisible {
+  color: rgb(191, 191, 191);
+}
+
+.ace-tm .ace_storage,
+.ace-tm .ace_keyword {
+  color: blue;
+}
+
+.ace-tm .ace_constant {
+  color: rgb(197, 6, 11);
+}
+
+.ace-tm .ace_constant.ace_buildin {
+  color: rgb(88, 72, 246);
+}
+
+.ace-tm .ace_constant.ace_language {
+  color: rgb(88, 92, 246);
+}
+
+.ace-tm .ace_constant.ace_library {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+.ace-tm .ace_support.ace_function {
+  color: rgb(60, 76, 114);
+}
+
+.ace-tm .ace_support.ace_constant {
+  color: rgb(6, 150, 14);
+}
+
+.ace-tm .ace_support.ace_type,
+.ace-tm .ace_support.ace_class {
+  color: rgb(109, 121, 222);
+}
+
+.ace-tm .ace_keyword.ace_operator {
+  color: rgb(104, 118, 135);
+}
+
+.ace-tm .ace_string {
+  color: rgb(3, 106, 7);
+}
+
+.ace-tm .ace_comment {
+  color: rgb(76, 136, 107);
+}
+
+.ace-tm .ace_comment.ace_doc {
+  color: rgb(0, 102, 255);
+}
+
+.ace-tm .ace_comment.ace_doc.ace_tag {
+  color: rgb(128, 159, 191);
+}
+
+.ace-tm .ace_constant.ace_numeric {
+  color: rgb(0, 0, 205);
+}
+
+.ace-tm .ace_variable {
+  color: rgb(49, 132, 149);
+}
+
+.ace-tm .ace_xml-pe {
+  color: rgb(104, 104, 91);
+}
+
+.ace-tm .ace_entity.ace_name.ace_function {
+  color: #0000A2;
+}
+
+
+.ace-tm .ace_heading {
+  color: rgb(12, 7, 255);
+}
+
+.ace-tm .ace_list {
+  color:rgb(185, 6, 144);
+}
+
+.ace-tm .ace_meta.ace_tag {
+  color:rgb(0, 22, 142);
+}
+
+.ace-tm .ace_string.ace_regex {
+  color: rgb(255, 0, 0)
+}
+
+.ace-tm .ace_marker-layer .ace_selection {
+  background: rgb(181, 213, 255);
+}
+.ace-tm.ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px white;
+}
+.ace-tm .ace_marker-layer .ace_step {
+  background: rgb(252, 255, 0);
+}
+
+.ace-tm .ace_marker-layer .ace_stack {
+  background: rgb(164, 229, 101);
+}
+
+.ace-tm .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.ace-tm .ace_marker-layer .ace_active-line {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.ace-tm .ace_gutter-active-line {
+    background-color : #dcdcdc;
+}
+
+.ace-tm .ace_marker-layer .ace_selected-word {
+  background: rgb(250, 250, 255);
+  border: 1px solid rgb(200, 200, 250);
+}
+
+.ace-tm .ace_indent-guide {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
+}
+
+.ace-tm .ace_indent-guide-active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAZSURBVHjaYvj///9/hivKyv8BAAAA//8DACLqBhbvk+/eAAAAAElFTkSuQmCC") right repeat-y;
+}
+
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">
+.ace_br1 {border-top-left-radius    : 3px;}
+.ace_br2 {border-top-right-radius   : 3px;}
+.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}
+.ace_br4 {border-bottom-right-radius: 3px;}
+.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}
+.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}
+.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}
+.ace_br8 {border-bottom-left-radius : 3px;}
+.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}
+.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}
+.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}
+.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}
+.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+
+
+.ace_editor {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Source Code Pro', 'source-code-pro', monospace;
+    direction: ltr;
+    text-align: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ace_scroller {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: text;
+}
+
+.ace_content {
+    position: absolute;
+    box-sizing: border-box;
+    min-width: 100%;
+    contain: style size layout;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+.ace_dragging .ace_scroller:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: rgba(250, 250, 250, 0.01);
+    z-index: 1000;
+}
+.ace_dragging.ace_dark .ace_scroller:before{
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.ace_gutter {
+    position: absolute;
+    overflow : hidden;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    cursor: default;
+    z-index: 4;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    contain: style size layout;
+}
+
+.ace_gutter-active-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.ace_scroller.ace_scroll-left:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;
+    pointer-events: none;
+}
+
+.ace_gutter-cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 19px;
+    padding-right: 6px;
+    background-repeat: no-repeat;
+}
+
+.ace_gutter-cell.ace_error {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_warning {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");
+    background-position: 2px center;
+}
+
+.ace_gutter-cell.ace_info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");
+    background-position: 2px center;
+}
+.ace_dark .ace_gutter-cell.ace_info {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");
+}
+
+.ace_scrollbar {
+    contain: strict;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+}
+
+.ace_scrollbar-inner {
+    position: absolute;
+    cursor: text;
+    left: 0;
+    top: 0;
+}
+
+.ace_scrollbar-v{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+}
+
+.ace_scrollbar-h {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    left: 0;
+}
+
+.ace_print-margin {
+    position: absolute;
+    height: 100%;
+}
+
+.ace_text-input {
+    position: absolute;
+    z-index: 0;
+    width: 0.5em;
+    height: 1em;
+    opacity: 0;
+    background: transparent;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    font: inherit;
+    padding: 0 1px;
+    margin: 0 -1px;
+    contain: strict;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
+    /*with `pre-line` chrome inserts &nbsp; instead of space*/
+    white-space: pre!important;
+}
+.ace_text-input.ace_composition {
+    background: transparent;
+    color: inherit;
+    z-index: 1000;
+    opacity: 1;
+}
+.ace_composition_placeholder { color: transparent }
+.ace_composition_marker { 
+    border-bottom: 1px solid;
+    position: absolute;
+    border-radius: 0;
+    margin-top: 1px;
+}
+
+[ace_nocontext=true] {
+    transform: none!important;
+    filter: none!important;
+    clip-path: none!important;
+    mask : none!important;
+    contain: none!important;
+    perspective: none!important;
+    mix-blend-mode: initial!important;
+    z-index: auto;
+}
+
+.ace_layer {
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    /* workaround for chrome bug https://github.com/ajaxorg/ace/issues/2312*/
+    word-wrap: normal;
+    white-space: pre;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    /* setting pointer-events: auto; on node under the mouse, which changes
+        during scroll, will break mouse wheel scrolling in Safari */
+    pointer-events: none;
+}
+
+.ace_gutter-layer {
+    position: relative;
+    width: auto;
+    text-align: right;
+    pointer-events: auto;
+    height: 1000000px;
+    contain: style size layout;
+}
+
+.ace_text-layer {
+    font: inherit !important;
+    position: absolute;
+    height: 1000000px;
+    width: 1000000px;
+    contain: style size layout;
+}
+
+.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {
+    contain: style size layout;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.ace_hidpi .ace_text-layer,
+.ace_hidpi .ace_gutter-layer,
+.ace_hidpi .ace_content,
+.ace_hidpi .ace_gutter {
+    contain: strict;
+    will-change: transform;
+}
+.ace_hidpi .ace_text-layer > .ace_line, 
+.ace_hidpi .ace_text-layer > .ace_line_group {
+    contain: strict;
+}
+
+.ace_cjk {
+    display: inline-block;
+    text-align: center;
+}
+
+.ace_cursor-layer {
+    z-index: 4;
+}
+
+.ace_cursor {
+    z-index: 4;
+    position: absolute;
+    box-sizing: border-box;
+    border-left: 2px solid;
+    /* workaround for smooth cursor repaintng whole screen in chrome */
+    transform: translatez(0);
+}
+
+.ace_multiselect .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_slim-cursors .ace_cursor {
+    border-left-width: 1px;
+}
+
+.ace_overwrite-cursors .ace_cursor {
+    border-left-width: 0;
+    border-bottom: 1px solid;
+}
+
+.ace_hidden-cursors .ace_cursor {
+    opacity: 0.2;
+}
+
+.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {
+    opacity: 0;
+}
+
+.ace_smooth-blinking .ace_cursor {
+    transition: opacity 0.18s;
+}
+
+.ace_animate-blinking .ace_cursor {
+    animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    animation-name: blink-ace-animate;
+    animation-iteration-count: infinite;
+}
+
+.ace_animate-blinking.ace_smooth-blinking .ace_cursor {
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-name: blink-ace-animate-smooth;
+}
+    
+@keyframes blink-ace-animate {
+    from, to { opacity: 1; }
+    60% { opacity: 0; }
+}
+
+@keyframes blink-ace-animate-smooth {
+    from, to { opacity: 1; }
+    45% { opacity: 1; }
+    60% { opacity: 0; }
+    85% { opacity: 0; }
+}
+
+.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {
+    position: absolute;
+    z-index: 3;
+}
+
+.ace_marker-layer .ace_selection {
+    position: absolute;
+    z-index: 5;
+}
+
+.ace_marker-layer .ace_bracket {
+    position: absolute;
+    z-index: 6;
+}
+
+.ace_marker-layer .ace_error_bracket {
+    position: absolute;
+    border-bottom: 1px solid #DE5555;
+    border-radius: 0;
+}
+
+.ace_marker-layer .ace_active-line {
+    position: absolute;
+    z-index: 2;
+}
+
+.ace_marker-layer .ace_selected-word {
+    position: absolute;
+    z-index: 4;
+    box-sizing: border-box;
+}
+
+.ace_line .ace_fold {
+    box-sizing: border-box;
+
+    display: inline-block;
+    height: 11px;
+    margin-top: -2px;
+    vertical-align: middle;
+
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");
+    background-repeat: no-repeat, repeat-x;
+    background-position: center center, top left;
+    color: transparent;
+
+    border: 1px solid black;
+    border-radius: 2px;
+
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.ace_dark .ace_fold {
+}
+
+.ace_fold:hover{
+    background-image:
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),
+        url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");
+}
+
+.ace_tooltip {
+    background-color: #f5f5f5;
+    border: 1px solid gray;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: black;
+    max-width: 100%;
+    padding: 3px 4px;
+    position: fixed;
+    z-index: 999999;
+    box-sizing: border-box;
+    cursor: default;
+    white-space: pre;
+    word-wrap: break-word;
+    line-height: normal;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    pointer-events: none;
+}
+
+.ace_tooltip:focus {
+    outline: 1px solid black;
+}
+
+.ace_folding-enabled > .ace_gutter-cell {
+    padding-right: 13px;
+}
+
+.ace_fold-widget {
+    box-sizing: border-box;
+
+    margin: 0 -12px 0 1px;
+    display: none;
+    width: 11px;
+    vertical-align: top;
+
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 3px;
+    
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.ace_folding-enabled .ace_fold-widget {
+    display: inline-block;   
+}
+
+.ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");
+}
+
+.ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");
+}
+
+.ace_fold-widget:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.ace_fold-widget:active {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+/**
+ * Dark version for fold widgets
+ */
+.ace_dark .ace_fold-widget {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");
+}
+.ace_dark .ace_fold-widget.ace_end {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget.ace_closed {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");
+}
+.ace_dark .ace_fold-widget:hover {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.ace_dark .ace_fold-widget:active {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.ace_inline_button {
+    border: 1px solid lightgray;
+    display: inline-block;
+    margin: -1px 8px;
+    padding: 0 5px;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.ace_inline_button:hover {
+    border-color: gray;
+    background: rgba(200,200,200,0.2);
+    display: inline-block;
+    pointer-events: auto;
+}
+
+.ace_fold-widget.ace_invalid {
+    background-color: #FFB4B4;
+    border-color: #DE5555;
+}
+
+.ace_fade-fold-widgets .ace_fold-widget {
+    transition: opacity 0.4s ease 0.05s;
+    opacity: 0;
+}
+
+.ace_fade-fold-widgets:hover .ace_fold-widget {
+    transition: opacity 0.05s ease 0.05s;
+    opacity:1;
+}
+
+.ace_underline {
+    text-decoration: underline;
+}
+
+.ace_bold {
+    font-weight: bold;
+}
+
+.ace_nobold .ace_bold {
+    font-weight: normal;
+}
+
+.ace_italic {
+    font-style: italic;
+}
+
+
+.ace_error-marker {
+    background-color: rgba(255, 0, 0,0.2);
+    position: absolute;
+    z-index: 9;
+}
+
+.ace_highlight-marker {
+    background-color: rgba(255, 255, 0,0.2);
+    position: absolute;
+    z-index: 8;
+}
+
+.ace_mobile-menu {
+    position: absolute;
+    line-height: 1.5;
+    border-radius: 4px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: white;
+    box-shadow: 1px 3px 2px grey;
+    border: 1px solid #dcdcdc;
+    color: black;
+}
+.ace_dark > .ace_mobile-menu {
+    background: #333;
+    color: #ccc;
+    box-shadow: 1px 3px 2px grey;
+    border: 1px solid #444;
+
+}
+.ace_mobile-button {
+    padding: 2px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.ace_mobile-button:hover {
+    background-color: #eee;
+    opacity:1;
+}
+.ace_mobile-button:active {
+    background-color: #ddd;
+}
+
+.ace_placeholder {
+    font-family: arial;
+    transform: scale(0.9);
+    transform-origin: left;
+    white-space: pre;
+    opacity: 0.7;
+    margin: 0 10px;
+}
+
+.ace_ghost_text {
+    opacity: 0.5;
+    font-style: italic;
+    white-space: pre;
+}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace_scrollbar.css">.ace_editor>.ace_sb-v div, .ace_editor>.ace_sb-h div{
+  position: absolute;
+  background: rgba(128, 128, 128, 0.6);
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  z-index: 8;
+}
+.ace_editor>.ace_sb-v, .ace_editor>.ace_sb-h {
+  position: absolute;
+  z-index: 6;
+  background: none;
+  overflow: hidden!important;
+}
+.ace_editor>.ace_sb-v {
+  z-index: 6;
+  right: 0;
+  top: 0;
+  width: 12px;
+}
+.ace_editor>.ace_sb-v div {
+  z-index: 8;
+  right: 0;
+  width: 100%;
+}
+.ace_editor>.ace_sb-h {
+  bottom: 0;
+  left: 0;
+  height: 12px;
+}
+.ace_editor>.ace_sb-h div {
+  bottom: 0;
+  height: 100%;
+}
+.ace_editor>.ace_sb_grabbed {
+  z-index: 8;
+  background: #000;
+}
+/*# sourceURL=ace/css/ace_scrollbar.css */</style><style data-rc-order="prepend" rc-util-key="@ant-design-icons">
+.anticon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.anticon > * {
+  line-height: 1;
+}
+
+.anticon svg {
+  display: inline-block;
+}
+
+.anticon::before {
+  display: none;
+}
+
+.anticon .anticon-icon {
+  display: block;
+}
+
+.anticon[tabindex] {
+  cursor: pointer;
+}
+
+.anticon-spin::before,
+.anticon-spin {
+  display: inline-block;
+  -webkit-animation: loadingCircle 1s infinite linear;
+  animation: loadingCircle 1s infinite linear;
+}
+
+@-webkit-keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+</style><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="language" content="vi"><meta name="google-site-verification" content="FGZ1Lk1fO1Krgt2Cv_CWOyatRBZbGSBqZXpzCFgvenw"><meta property="og:type" content="website"><meta property="og:image" content="https://minio.2soft.top/tek4-assets/Logo%20%C4%90en.png"><meta property="og:site_name" content="Khoá học"><title>Định dạng chuỗi ký tự trong Python</title><meta name="title" content="Định dạng chuỗi ký tự trong Python"><meta name="description" content="Cách thức định dạng chuỗi ký tự chẳng hạn như căn trái, căn phải hoặc hiển thị ra những chuỗi ký tự có định dạng đặc biệt."><meta name="keywords" content="python, định dạng chuỗi ký tự"><meta name="robots" content="index, follow"><meta property="og:url" content="https://tek4.vn/khoa-hoc/lap-trinh-python-can-ban/dinh-dang-chuoi-ky-tu-trong-python"><meta property="og:title" content="Định dạng chuỗi ký tự trong Python"><meta property="og:description" content="Cách thức định dạng chuỗi ký tự chẳng hạn như căn trái, căn phải hoặc hiển thị ra những chuỗi ký tự có định dạng đặc biệt."><link rel="canonical" href="https://tek4.vn/khoa-hoc/lap-trinh-python-can-ban/dinh-dang-chuoi-ky-tu-trong-python"><meta name="next-head-count" content="16"><link rel="shortcut icon" href="https://tek4.vn/favicon.ico"><link rel="preconnect" href="https://fonts.gstatic.com/"><script type="text/javascript" async="" src="./Định dạng chuỗi ký tự trong Python_files/destination"></script><script type="text/javascript" async="" src="./Định dạng chuỗi ký tự trong Python_files/analytics.js.tải xuống"></script><script type="text/javascript" async="" src="./Định dạng chuỗi ký tự trong Python_files/js"></script><script async="" src="./Định dạng chuỗi ký tự trong Python_files/gtm.js.tải xuống"></script><script type="text/javascript">
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'GTM-TSHH4GT', {
+                      page_path: window.location.pathname,
+                    });
+                  </script><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link rel="preload" href="./Định dạng chuỗi ký tự trong Python_files/508194433627b53d.css" as="style"><link rel="stylesheet" href="./Định dạng chuỗi ký tự trong Python_files/508194433627b53d.css" data-n-g=""><noscript data-n-css=""></noscript><script defer="" nomodule="" src="./Định dạng chuỗi ký tự trong Python_files/polyfills-c67a75d1b6f99dc8.js.tải xuống" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/webpack-efae209e475f7c4a.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/framework-ce84985cd166733a.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/main-a7ec8ea3296e953b.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/_app-ea73f8f4f0aa089f.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/[detailSectionItemSlug]-83dbdbf13ce3470b.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/_buildManifest.js.tải xuống" defer="" type="text/javascript"></script><script src="./Định dạng chuỗi ký tự trong Python_files/_ssgManifest.js.tải xuống" defer="" type="text/javascript"></script><style data-href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap">@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/greatvibes/v18/RWmMoKWR9v4ksMfaWd_JN-XB.woff) format('woff')}@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/greatvibes/v18/RWmMoKWR9v4ksMfaWd_JN9XKiaQoDmlrMlY.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/greatvibes/v18/RWmMoKWR9v4ksMfaWd_JN9XLiaQoDmlrMlY.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/greatvibes/v18/RWmMoKWR9v4ksMfaWd_JN9XFiaQoDmlr.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><style data-href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyfMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuDyYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><style data-href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap">@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvC70w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><style data-href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600&amp;display=swap">@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R8aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jqyR9aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq_p9aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq5Z9aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6aXw.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w9.woff) format('woff')}@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxC7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRzS7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxi7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRxy7m0dR9pBOi.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:italic;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUQjIg1_i6t8kCHKm459WxRyS7m0dR9pA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><style data-href="https://fonts.googleapis.com/css2?family=Inconsolata&amp;display=swap">@font-face{font-family:'Inconsolata';font-style:normal;font-weight:400;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8aRk.woff) format('woff')}@font-face{font-family:'Inconsolata';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRL2kXWdycuJDETf.woff) format('woff');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inconsolata';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRP2kXWdycuJDETf.woff) format('woff');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inconsolata';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kXWdycuJDA.woff) format('woff');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/de73224f1aeaff0f.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/4853384e300e7527.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/211628dcedfeb908.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/f37a23778cf0b865.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/c9fe8db861e68d91.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/25e4b36e08839cf5.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/8f8664102ff231d3.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/b80971fda456b69f.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/0b11d531b54dcaa8.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/6960c3b1ff5e9731.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/3fd0dee803bcc3f7.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/c6d568f22f7d36a2.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/ea7edc64b44c24a7.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/a03366c14232253c.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/719a36bfd9c0a755.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/8dccf4765f1d24bd.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/a3b45092bd84188c.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/18a094a778f2cc5c.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/389b014cd5e36fd8.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/7b3bbf17fa1c3922.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/ea3e150c8bb62c60.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/f52ce19001eca9a9.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/bad3809864afcdb6.css"><meta http-equiv="origin-trial" content="A4oIpR6f5aUXFRMbL6t6qaMk4lrHWxcV3DcrzORsA9sEsIk1FBRMFzzhfMNLuUpokZH40FV8s7iiXtt/729v8A4AAACFeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiQXR0cmlidXRpb25SZXBvcnRpbmdDcm9zc0FwcFdlYiIsImV4cGlyeSI6MTcxNDUyMTU5OSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script attributionsrc="" type="text/javascript" async="" src="./Định dạng chuỗi ký tự trong Python_files/f.txt"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><link as="script" rel="prefetch" href="./Định dạng chuỗi ký tự trong Python_files/index-a8639fbabb6f6cc1.js.tải xuống"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/99a0d3fb3ddcdace.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/9153d26545aedee7.css"><link rel="stylesheet" type="text/css" href="./Định dạng chuỗi ký tự trong Python_files/187b997af060d203.css"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script src="./Định dạng chuỗi ký tự trong Python_files/283970c76db99e2d0d90f0e7c45494f9.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script><script type="text/javascript" charset="utf8" async="" src="./Định dạng chuỗi ký tự trong Python_files/MathJax.js.tải xuống"></script></head><body style=""><div id="MathJax_Message" style="display: none;"></div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSHH4GT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript><img alt="img" height="1" width="1" style="display:none;visibility:hidden" src="https://www.facebook.com/tr?id=3177117302573288&amp;ev=PageView&amp;noscript=1"/></noscript><div id="__next"><div class="detail-lesson_detailLesson__0Z0Jk"><div class="listLesson_progress__1eLD9"><div class="container_containerFluid__a2ABe "><div class="ant-row ant-row-no-wrap ant-row-space-between ant-row-middle px--16"><div class="ant-col"><div class="ant-row ant-row-middle" style="margin-left: -16px; margin-right: -16px;"><div class="ant-col hide--sm" style="padding-left: 16px; padding-right: 16px;"><span role="img" aria-label="menu" tabindex="-1" class="anticon anticon-menu listLesson_menuIcon__OR3Wh "><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div><div class="ant-col" style="padding-left: 16px; padding-right: 16px;"><a href="https://tek4.vn/"><img alt="tek4 logo" loading="lazy" width="129" height="29" decoding="async" data-nimg="1" class="cursor--pointer" srcset="/_next/image?url=%2Fimages%2Flogo-2.png&amp;w=256&amp;q=75 1x, /_next/image?url=%2Fimages%2Flogo-2.png&amp;w=384&amp;q=75 2x" src="./Định dạng chuỗi ký tự trong Python_files/logo-2.png" style="color: transparent;"></a></div></div></div><div class="ant-col ant-col-10 hide--sm ant-col-lg-8"><div class="ant-row ant-row-space-between ant-row-middle listLesson_btnWrapper__PqJki"><div class="ant-col"><span role="img" aria-label="left" tabindex="-1" class="anticon anticon-left font-size--20 color--neutral-100 "><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span></div><div class="ant-col"><div class="ant-typography listLesson_menuLesson__mNNag"><div class="ant-space ant-space-horizontal ant-space-align-center" style="gap: 8px;"><div class="ant-space-item" style=""><span>Danh sách bài học</span></div><div class="ant-space-item"><img src="./Định dạng chuỗi ký tự trong Python_files/icon-menu.svg" alt=""></div></div></div></div><div class="ant-col"><span role="img" aria-label="right" tabindex="-1" class="anticon anticon-right font-size--20 color--neutral-100 "><svg viewBox="64 64 896 896" focusable="false" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg></span></div></div></div><div class="ant-col"><div class="ant-space ant-space-horizontal ant-space-align-center" style="gap: 8px;"><div class="ant-space-item"><div class="ant-typography listLesson_point__iJYM6">Số điểm: 10 điểm</div></div></div></div></div><div class="ant-row ant-row-space-between ant-row-middle listLesson_menuSm__EUyNh hide--md hide--lg hide--xl px--16"><div class="ant-col"><span role="img" aria-label="left" tabindex="-1" class="anticon anticon-left font-size--20 color--neutral-100 "><svg viewBox="64 64 896 896" focusable="false" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg></span></div><div class="ant-col"><div class="ant-typography listLesson_menuLesson__mNNag"><div class="ant-space ant-space-horizontal ant-space-align-center" style="gap: 8px;"><div class="ant-space-item" style=""><span>Danh sách bài học</span></div><div class="ant-space-item"><img src="./Định dạng chuỗi ký tự trong Python_files/icon-menu.svg" alt=""></div></div></div></div><div class="ant-col"><span role="img" aria-label="right" tabindex="-1" class="anticon anticon-right font-size--20 color--neutral-100 "><svg viewBox="64 64 896 896" focusable="false" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg></span></div></div></div></div><div class="courseLesson_lessonCourse__3EraH"><div class="container_container__YeQdj p--0"><div class="ant-row mb--8"><div class="ant-col ant-col-24 ant-col-lg-18 ant-col-lg-offset-3"></div><div class="ant-col ant-col-24 ant-col-lg-18 ant-col-lg-offset-3"><h1 class="ant-typography courseLesson_title__D3_Yf">Định dạng chuỗi ký tự trong Python</h1></div></div><div class="ant-row"><div class="ant-col ant-col-lg-18 ant-col-lg-offset-3"><div class="courseLesson_contentWrapper__Z_Ldx"><div><div class="content--html line-numbers"><div><p style="text-align: justify;">Trong các bài trước, chúng ta đã làm việc với các chuỗi ký tự đơn giản. Tuy nhiên, trên thực tế có rất nhiều bài toán buộc chúng ta phải định dạng chuỗi ký tự chẳng hạn như căn trái, căn phải hoặc hiển thị ra những chuỗi ký tự có định dạng đặc biệt. Trong những trường hợp như vậy, chúng ta phải làm như thế nào? Trong bài này, chúng ta sẽ cùng tìm hiểu cách thức để định dạng các chuỗi như vậy trong Python.</p>
+<h2 style="text-align: justify;">Định dạng chuỗi ký tự kiểu cũ</h2>
+<p style="text-align: justify;">Python kế thừa cách định dạng chuỗi ký tự khi in ra theo cách tương tự như các ngôn ngữ lập trình cũ hơn như C hay C++. Chúng ta có thể sử dụng ký hiệu dấu phần trăm (<code>%</code>) để thực hiện điều này.</p>
+<p style="text-align: justify;"><strong>Ví dụ 1:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">a = 100.375
+print('%.3f' %a)
+print('%.5f' %a)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">100.375
+100.37500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Ở đây, trong câu lệnh thứ nhất chúng ta chỉ định chuỗi in ra phải có độ chính xác đến 3 chữ số phía sau, còn ở câu lệnh thứ hai chúng ta chỉ định độ chính xác này là 5 chữ số. Dấu <code>%</code> thể hiện rằng đây là một chỉ định định dạng ký tự, <code>f</code> thể hiện rằng chúng ta định dạng chuỗi theo dạng hiển thị của số thực dấu chấm động dạng decimal. Bảng dưới đây sẽ thể thiện rõ hơn về các ký tự có thể sử dụng để định dạng và ý nghĩa của nó:</p>
+<table class="docutils align-default" style="border-collapse: collapse; margin-left: auto; margin-right: auto; width: 94.2917%;">
+<thead>
+<tr class="row-odd">
+<th class="head" style="width: 3.7024%;">
+<p>Ký tự</p>
+</th>
+<th class="head" style="width: 44.8975%;">
+<p>Ý nghĩa</p>
+</th>
+<th class="head" style="width: 51.4118%;">
+<p>Ví dụ</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'d'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Số nguyên có dấu</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%d' %(-100))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; -100</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'i'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Số nguyên có dấu</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%i' %(-100))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; -100</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'o'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Giá trị dạng bát phân (octan)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%o' %(20))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 24</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'u'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Giống với ký tự <code class="docutils literal notranslate"><span class="pre">'d'</span></code>.</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%u' %(-100))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; -100</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'x'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Giá trị hệ 16 có dấu (viết thường)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;"><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%5x</span><span class="s2">"</span><span class="o">%</span> <span class="p">(</span><span class="mi">47</span><span class="p">))</span></span></p>
+<p><span class="p" style="font-size: 14px;">&gt;&gt;&gt; 2f</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'X'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Giá trị hệ 16 có dấu (viết hoa)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;"><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%5.4X</span><span class="s2">"</span><span class="o">%</span> <span class="p">(</span><span class="mi">47</span><span class="p">))</span></span></p>
+<p><span class="p" style="font-size: 14px;">&gt;&gt;&gt; 002F</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'e'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số mũ cho số thực dấu chấm động (viết thường)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;"><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%9.2e</span><span class="s2">"</span><span class="o">%</span> <span class="p">(</span><span class="mf">312.087</span><span class="p">))</span></span></p>
+<p><span class="p" style="font-size: 14px;">&gt;&gt;&gt; 3.12e+02</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'E'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số mũ cho số thực dấu chấm động (viết hoa)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;"><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%9.2E</span><span class="s2">"</span><span class="o">%</span> <span class="p">(</span><span class="mf">312.087</span><span class="p">))</span></span></p>
+<p><span class="p" style="font-size: 14px;">&gt;&gt;&gt; 3.12E+02</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'f'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số thực dạng thập phân</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%f' %(100.21))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 100.210000</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'F'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số thực dạng thập phân</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%F' %(100.21))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 100.210000</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'g'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số thực dấu chấm động. Sử dụng định dạng số mũ viết thường nếu số mũ nhỏ hơn -4 hoặc nhỏ hơn độ chính xác</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%g' %(3e9))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 3e+09</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'G'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Định dạng số thực dấu chấm động. Sử dụng định dạng số mũ viết hoa nếu số mũ nhỏ hơn -4 hoặc nhỏ hơn độ chính xác</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%G' %(3e9))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 3E+09</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'c'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Một ký tự (nhận vào một giá trị số nguyên hoặc một ký tự)</p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%c' %('a'))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; a</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'r'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Chuỗi ký tự (chuyển đổi từ bất kỳ đối tượng Python nào bằng hàm <a class="reference internal" title="repr" href="https://docs.python.org/3/library/functions.html#repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a></p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%r' %('Python'))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 'Python'</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'s'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Chuỗi ký tự (chuyển đổi từ bất kỳ đối tượng Python nào bằng hàm <a class="reference internal" title="str" href="https://docs.python.org/3/library/stdtypes.html#str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a></p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%s' %('Python'))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; Python</span></p>
+</td>
+</tr>
+<tr class="row-odd">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'a'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Chuỗi ký tự (chuyển đổi từ bất kỳ đối tượng Python nào bằng hàm <a class="reference internal" title="ascii" href="https://docs.python.org/3/library/functions.html#ascii"><code class="xref py py-func docutils literal notranslate"><span class="pre">ascii()</span></code></a></p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%a' %('Python cơ bản'))</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; 'Python c\u01a1 b\u1ea3n'</span></p>
+</td>
+</tr>
+<tr class="row-even">
+<td style="width: 3.7024%;">
+<p><code class="docutils literal notranslate"><span class="pre">'%'</span></code></p>
+</td>
+<td style="width: 44.8975%;">
+<p>Không có tham số nào được chuyển đổi, trả về kết quả là ký tự dấu phần trăm <code class="docutils literal notranslate"><span class="pre">'%'</span></code></p>
+</td>
+<td style="width: 51.4118%;">
+<p><span style="font-size: 14px;">print('%')</span></p>
+<p><span style="font-size: 14px;">&gt;&gt;&gt; %</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: justify;">Định dạng sử dụng phương thức format()</h2>
+<p style="text-align: justify;"><span style="font-weight: 400;">Để linh hoạt và dễ dàng hơn cho việc định dạng, Python 3 hỗ trợ phương thức định dạng chuỗi <code>format()</code>. </span><span style="font-weight: 400;">Phương thức <code>format()</code> có tính rất linh hoạt và mạnh mẽ trong việc định dạng chuỗi ký tự. Chuỗi ký tự được định dạng sẽ bao gồm cặp dấu ngoặc nhọn để đặt ví trị cho giá trị sẽ được in ra. Ngoài ra, chúng ta có thể sử dụng đối số vị trí hoặc đối số từ khóa để chỉ định thứ tự cho giá trị được in ra. </span><span style="font-weight: 400;">Phương thức <code>format()</code> có nhiệm vụ thực hiện định dạng (các) giá trị được chỉ định và chèn các giá trị này vào bên trong đối tượng giữ chỗ của chuỗi ký tự. Đối tượng giữ chỗ được xác định bằng dấu ngoặc nhọn: <code>{}</code>.</span></p>
+<p style="text-align: justify;"><em><strong>Cú pháp của phương thức này như sau:</strong></em></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">string.format(value1, value2...)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Trong đó:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-weight: 400;">Tham số <code>value1</code> và <code>value2</code> là bắt buộc. Một hoặc nhiều giá trị cần được định dạng và chèn vào chuỗi ký tự. Các giá trị là danh sách các giá trị được phân tách bằng dấu phẩy. Các giá trị có thể thuộc bất kỳ kiểu dữ liệu nào.</span></li>
+</ul>
+<p style="text-align: justify;"><strong>Ví dụ 2:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">print("My name is {}, you can learn about me.".format("Python"))
+print("{0} is easy with {1}.".format("Python", "tek4.vn"))
+print("{str} is easy with {str2}.".format(str = "Python", str2 = "tek4.vn"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả đầu ra:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">My name is Python, you can learn about me.
+Python is easy with tek4.vn
+Python is easy with tek4.vn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Trong đoạn mã bên trên, câu lệnh <code>print()</code> đầu tiên sẽ thực hiện in ra chuỗi ký tự với các đối tượng giữ chỗ tương ứng (Python). </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> thứ hai có sử dụng các đối tượng giữ chỗ với giá trị số nguyên được truyền vào, tương ứng với các vị trí của chuỗi ký tự trong phương thức <code>format()</code> là 2 giá trị của <code>{0}</code> và <code>{1}</code>. Các giá trị của biến, biêu thức nằm trong đối số của phương thức <code>format()</code> sẽ được lần lượt thay thế vào đây (theo đúng thứ tự). </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> thứ ba có sử dụng các đối tượng giữ chỗ với các từ khóa {str} và {str2}, tương ứng với các từ khóa trong phương thức <code>format()</code>. <br></span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Để định dạng các chuỗi ký tự một cách mềm dẻo hơn, chúng ta thêm các chỉ thị định dạng vào trong dấu ngoặc nhọn <code>{}</code>. Chẳng hạn:</span></p>
+<p style="text-align: justify;"><strong>Ví dụ 3:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">print("Number {:d}".format(1982))
+print("Float number: {:f}".format(395.19999))
+print("Binary: {0:b}, Oct: {0:o}, Hex: {0:x}".format(19))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả đầu ra:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">Number 1982
+Float number: 395.199990
+Binary: 10011, Oct: 23, Hex: 13<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Trong đoạn mã bên trên, câu lệnh <code>print()</code> đầu tiên sẽ thực hiện in ra định dạng số nguyên (với chỉ thị <code>:d</code>).</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">âu lệnh <code>print()</code> thứ hai in ra giá trị số thực dạng thập phân (chỉ thị <code>:f</code>). </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> cuối cùng thực hiện in ra các định dạng cơ số 2 (chỉ thị <code>:b</code>), 8 (chỉ thị <code>:o</code>) và 16 (chỉ thị <code>:x</code>) của giá trị <code>19</code>. </span></li>
+</ul>
+<p><span style="font-weight: 400;">Các chỉ thị định dạng chi tiết có thể xem trong bảng dưới đây:<br></span></p>
+<table style="border-collapse: collapse; margin-left: auto; margin-right: auto; width: 89.0688%; height: 1824px;">
+<tbody>
+<tr style="height: 76px;">
+<td style="text-align: center; width: 9.70882%; height: 76px;">
+<p><span style="font-weight: 400;">Kiểu định dạng</span></p>
+</td>
+<td style="text-align: center; width: 37.3636%; height: 76px;">
+<p><span style="font-weight: 400;">Mô tả</span></p>
+</td>
+<td style="text-align: center; width: 49.0398%; height: 76px;">
+<p><span style="font-weight: 400;">Ví dụ<br></span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:&lt;</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Căn lề bên trái với một lượng khoảng trống nhất định</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("There are {:&lt;8} chickens".format(49))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; There are 49 &nbsp; &nbsp; &nbsp; chickens</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:&gt;</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Căn lề bên phải với một khoảng trống nhất định</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("There are {:&gt;8} chickens".format(49))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; There are &nbsp; &nbsp; &nbsp; 49 chickens</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:^</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Căn lề chính giữa với một khoảng trống nhất định</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("There are {:^8} chickens".format(49))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; There are &nbsp; &nbsp;49 &nbsp; &nbsp;chickens</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:=</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Đặt dấu ở vị trí bên trái xa nhất</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("It's {:=10} degrees".format(-10))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; It's - &nbsp; &nbsp; &nbsp; 10 degrees</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:+</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Chỉ định kết quả là số dương hay số âm</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p>print("It is {:+} and {:+} degrees".format(-3, 7))</p>
+<p>&gt;&gt;&gt; It is -3 and +7 degrees</p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:-</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Chỉ định cho các kết quả là số âm</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("It is {:-} and {:-} degrees celsius.".format(-3, 7))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; It is -3 and 7 degrees celsius.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Sử dụng một khoảng trắng để thêm khoảng trắng trước các giá trị số dương</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("It is {: } and {: } degrees celsius.".format(-3, 7))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; It is -3 and &nbsp;7 degrees celsius.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:,</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Sử dụng dấu phẩy làm dấu phân tách hàng nghìn</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Universe is {:,} years old.".format(13800000000))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Universe is 13,800,000,000 years old.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:_</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Sử dụng dấu gạch dưới làm dấu phân tách hàng nghìn</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("The universe is {:_} years old.".format(13800000000))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; The universe is 13_800_000_000 years old.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:b</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số nhị phân</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Binary of {0} is {0:b}".format(5))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Binary of 5 is 101</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:c</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Chuyển đổi giá trị sang các bộ ký tự unicode tương ứng</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print('It is {:c}'.format(64))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; It is @</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:d</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số thập phân</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("There are {:d} chickens.".format(0b101))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; There are 5 chickens.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:e</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số học, với ký tự e viết thường</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("There are {:e} chickens.".format(5))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; There are 5.000000e+00 chickens.</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:f</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Cố định định dạng số thập phân</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Price is {:.2f}$".format(45))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Price is 45.00$</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:g</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng chung</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p>print('{:g}'.format(3.14159))</p>
+<p>&gt;&gt;&gt; 3.14159</p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:o</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số bát phân</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Octal of {0} is {0:o}".format(10))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Octal of 10 is 12</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:x</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số hệ 16</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Hexadecimal of {0} is {0:x}".format(255))<br></span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Hexadecimal of 255 is ff</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:n</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print('{:n}'.format(359))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; 359</span></p>
+</td>
+</tr>
+<tr style="height: 92px;">
+<td style="width: 9.70882%; height: 92px;">
+<p><span style="font-weight: 400;">:%</span></p>
+</td>
+<td style="width: 37.3636%; height: 92px;">
+<p><span style="font-weight: 400;">Định dạng số phần trăm</span></p>
+</td>
+<td style="width: 49.0398%; height: 92px;">
+<p><span style="font-weight: 400;">print("Score is {:.0%}".format(0.25))</span></p>
+<p><span style="font-weight: 400;">&gt;&gt;&gt; Score is 25%</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-weight: 400;">Ngoài ra, chúng ta có thể thêm các con số để định dạng số lượng vị trí hiển thị cũng như độ chính xác của số hiển thị.</span></p>
+<p style="text-align: justify;"><strong>Ví dụ 4:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">print("{:5d}".format(19))
+print("{:2d}".format(3291))
+print("{:8.3f}".format(19.9813219))
+print("{:05d}".format(21))
+print("{:08.3f}".format(10.438292189))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả đầu ra:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">   19
+3291
+  19.981
+00021
+0010.438<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Trong đoạn mã bên trên:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> thứ nhất hiện ra số nguyên với độ rộng hiển thị là <code>5</code>, nếu số ký tự thực tế nhỏ hơn độ rộng hiển thị thì trên màn hình sẽ đệm thêm các khoảng trắng để hiển thị đủ 5 vị trí. </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Với câu lệnh <code>print()</code> phía sau khi thừa vị trí hiển thị (<code>4</code> so với <code>2</code>) thì chương trình sẽ tự động hiển thị số lượng cần thiết chứ không cắt bớt. </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> thứ ba thực hiện in ra số thập phân với khoảng rộng có thể hiển thị là <code>8</code>, và thực hiện làm tròn đến chữ số thứ <code>3</code> sau dấu thập phân. </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Ở dòng thứ 4 và thứ 5, thay vì đệm vị trí thiếu bằng khoảng trắng thì ta đệm bằng các số <code>0</code>.<br></span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-weight: 400;">Để căn trái và căn giữa chúng ta sử dụng các ký tự <code>&gt;</code>,<code>&lt;</code>,<code>^</code>.</span></p>
+<p style="text-align: justify;"><strong>Ví dụ 5:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">print("--------------------")
+print("{:20}Python".format("Python"))
+print("{:&gt;20}".format("Python"))
+print("{:^20}".format("Python"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả đầu ra:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">--------------------
+Python              Python
+              Python
+       Python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Trong đoạn mã trên:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> đầu tiên sẽ thực hiện in ra chuỗi ký tự có nhiệm vụ để gióng hàng cho chúng ta dễ nhìn.</span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh <code>print()</code> thứ hai thực hiện in chuỗi ký tự được căn chỉnh bên trái và có khoảng trống là <code>20</code>. </span></li>
+<li style="text-align: justify;"><span style="font-weight: 400;">Câu lệnh print() thứ 3 và 4 thực hiện in ra chuỗi ký tự được căn chỉnh bên phải và giữa với khoảng trống là <code>20</code>. </span></li>
+</ul>
+<p><span style="font-weight: 400;">Chúng ta sẽ sử dụng 20 dấu gạch ngang để đại diện cho khoảng trống cho việc minh họa. Các bạn có thể thấy rằng chuỗi ký tự <code>"Python"</code> đầu tiên được đặt ở bên trái, chuỗi ký tự <code>"Python"</code> thứ 2 được đặt sau khoảng trống thứ 20. Chuỗi ký tự <code>"Python"</code> thứ 3 được đặt ở bên phải và có khoảng trống còn lại bên trái là 15. Chuỗi <code>"Python"</code> cuối cùng được căn ở giữa trong khoảng trống là 20.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Ngoài ra, bạn cũng có thể truyền các mã định dạng như độ chính xác, căn chỉnh, điền ký tự dưới dạng đối số vị trí hoặc từ khóa một cách linh động.</span></p>
+<p style="text-align: justify;"><strong>Ví dụ 6:</strong></p>
+<div class="code-toolbar"><pre class="language-python line-numbers" tabindex="0"><code class="language-python">string = "{:{fill}{align}{width}}"
+print(string.format('python', fill='*', align='^', width=9))
+num = "{:{align}{width}.{precision}f}"
+print(num.format(392.989, align='&lt;', width=8, precision=1))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;">Kết quả đầu ra:</p>
+<div class="code-toolbar"><pre class="language-markup line-numbers" tabindex="0"><code class="language-markup">*python**
+393.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><div class="toolbar"><div class="toolbar-item"><button class="copy-to-clipboard-button" type="button" data-copy-state="copy"><span>Copy</span></button></div></div></div>
+<p style="text-align: justify;"><span style="font-weight: 400;">Trong ví dụ đầu tiên, <code>'python'</code> là đối số vị trí cần được định dạng. Tương tự như vậy, <code>fill = '*'</code>, <code>align = '^'</code> và <code>width = 9</code> là các đối số từ khóa. </span><span style="font-weight: 400;">Trong chuỗi ký tự mẫu, các đối số từ khóa này không được truy xuất như các chuỗi ký tự bình thường được in ra mà sẽ quyết định các mã định dạng <code>fill</code>, <code>align</code> và <code>width</code>. </span><span style="font-weight: 400;">Các đối số thay thế các đối tượng giữ chỗ được đặt tên tương ứng và chuỗi <code>'python'</code> được định dạng tương ứng.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Tương tự như vậy, trong ví dụ thứ hai, <code>392.989</code> là đối số vị trí và <code>align</code>, <code>width</code> và <code>precision</code> được truyền cho chuỗi ký tự mẫu dưới dạng mã định dạng.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">Tiếp theo chúng ta hãy làm quen với việc định dạng chuỗi ký tự in ra với các cách thức đã học.</span></p></div></div></div></div></div></div><div class="ant-row"><div class="ant-col ant-col-24 ant-col-lg-18 ant-col-lg-offset-3"><button type="button" class="ant-btn ant-btn-default false courseLesson_submitLesson__jF8L5"><span>Hoàn thành bài học</span></button></div></div></div></div></div><div class="boxChatCustom_boxChatCustom__1US44"><div><span class="ant-avatar ant-avatar-circle ant-avatar-image boxChatCustom_boxChat__cEDmY"><img src="./Định dạng chuỗi ký tự trong Python_files/icon-chat.png" alt="TEK4.VN-img"></span></div><a target="_blank" href="https://www.facebook.com/tek4.vn"><span class="ant-avatar ant-avatar-circle ant-avatar-image boxChatCustom_boxChat__cEDmY boxChatCustom_chatFb__RUaIr"><img src="./Định dạng chuỗi ký tự trong Python_files/icon-chat-fb.png" alt="TEK4.VN-img"></span></a></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"session":{"user":{},"expires":"2024-08-08T02:31:02.186Z","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWa3R2TVRKcVQycDF5b3VCaWJoNG5tMk53WGVaM3Jlcl9DRWhjX180Z3NJIn0.eyJleHAiOjE3MjA3NTE0NjAsImlhdCI6MTcyMDQ5MjI2MCwiYXV0aF90aW1lIjoxNzIwNDkyMjYwLCJqdGkiOiJkN2MwYzU2Yi1mOTZjLTRiOTMtODQ1MS01N2Y2OWRmN2E3YjIiLCJpc3MiOiJodHRwczovL3Nzby50ZWNoZ2F0ZS52bi9yZWFsbXMvdGVrNCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIyZmE2YmE4OC1iMjcxLTQ4Y2EtOWRkNS0wNzg2MzA2OWFhMDIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ0ZWs0Iiwic2Vzc2lvbl9zdGF0ZSI6IjVhYTBiYmNiLTI4ZWItNDNlZi1hYWMwLTY4NGVhN2NlZDAxMSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJhcHAtdXNlciIsImRlZmF1bHQtcm9sZXMtdGVrNCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI1YWEwYmJjYi0yOGViLTQzZWYtYWFjMC02ODRlYTdjZWQwMTEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IsSQ4bqhdCBRdWFuZyIsInByZWZlcnJlZF91c2VybmFtZSI6InF1YW5nZGF0aXRjQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiLEkOG6oXQiLCJmYW1pbHlfbmFtZSI6IlF1YW5nIiwiZW1haWwiOiJxdWFuZ2RhdGl0Y0BnbWFpbC5jb20ifQ.mD3vNyiBJKtZQO2Q5ten5FyYwYVWWrQAPzNXjiGzTgTY9mMlE4DbhU8vj0DRbM2YxXf60laMfrWNC_SOgyVnUNu3hLQ29dJaQe-hJ5QVA9dK20RE5ogDJGHATZK_iWr7hSKw6-dol9Agy7zJNS9dyo7gfA8iFeEMERFngBHATb5amJm5UkJUc982sTxhT2yRPiIzSM8TwEX7ChPKQXewJ8IwAoB4WFlL4QAP3s9T2xeZ9FR8Kt8CCUbmsc9fAEShvcL-NuBvDjzyrlL_QGcPmdg5lII1PEpy2DX8bXhIgO6qFzwjQvTzFyjGYddL7lcLDy_ZJkUoslVCg8o6nxguuQ"},"course":{"difficulty":"ALL_SCOPES","id":"61","title":"Lập trình Python cơ bản","slug":"lap-trinh-python-can-ban","description":"\u003cp style=\"text-align: justify;\"\u003ePython l\u0026agrave; một trong những ng\u0026ocirc;n ngữ lập tr\u0026igrave;nh phổ biến nhất hiện nay b\u0026ecirc;n cạnh Java hay JavaScript. Điều l\u0026agrave;m n\u0026ecirc;n sự phổ biến n\u0026agrave;y của Python l\u0026agrave; do t\u0026iacute;nh chất đơn giản, dễ tiếp cận c\u0026ugrave;ng với khối lượng thư viện đồ sộ cho mọi ứng dụng do đ\u0026oacute; n\u0026oacute; rất hay được d\u0026ugrave;ng để tạo ra c\u0026aacute;c bản thử nghiệm mẫu của ứng dụng, huấn luyện c\u0026aacute;c m\u0026ocirc; h\u0026igrave;nh machine learning, tạo ra c\u0026aacute;c ứng dụng web nhanh ch\u0026oacute;ng dễ d\u0026agrave;ng.\u0026nbsp;\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eKh\u0026oacute;a học lập tr\u0026igrave;nh Python cơ bản cung cấp cho người học những kiến thức cơ bản nhất về Python. Đ\u0026acirc;y l\u0026agrave; một kh\u0026oacute;a học với rất nhiều b\u0026agrave;i tập, project dự \u0026aacute;n v\u0026iacute; dụ gi\u0026uacute;p cho người học c\u0026oacute; thể chủ động v\u0026agrave; nắm được c\u0026aacute;ch giải quyết một b\u0026agrave;i to\u0026aacute;n cụ thể bằng ng\u0026ocirc;n ngữ lập tr\u0026igrave;nh m\u0026agrave; cụ thể ở đ\u0026acirc;y l\u0026agrave; ng\u0026ocirc;n ngữ Python. Mục ti\u0026ecirc;u của kh\u0026oacute;a học n\u0026agrave;y l\u0026agrave; gi\u0026uacute;p cho bạn c\u0026oacute; thể lập tr\u0026igrave;nh th\u0026agrave;nh thạo Python một c\u0026aacute;ch cơ bản từ con số 0.\u0026nbsp; Kh\u0026oacute;a học sẽ cung cấp cho bạn c\u0026aacute;c kh\u0026aacute;i niệm cơ bản về biến v\u0026agrave; c\u0026aacute;c kiểu dữ liệu kh\u0026aacute;c nhau trong Python, biết c\u0026aacute;ch sử dụng c\u0026aacute;c h\u0026agrave;m v\u0026agrave; mảng, cũng như vận dụng th\u0026agrave;nh thạo c\u0026aacute;c cấu tr\u0026uacute;c điều khiển để giải quyết c\u0026aacute;c vấn đề lập tr\u0026igrave;nh thực tế.\u003c/p\u003e\n\u003ch2\u003eKh\u0026oacute;a học n\u0026agrave;y d\u0026agrave;nh cho ai?\u003c/h2\u003e\n\u003cul\u003e\n\u003cli style=\"text-align: justify;\"\u003eBạn bắt đầu với lập tr\u0026igrave;nh v\u0026agrave; muốn học lập tr\u0026igrave;nh từ đầu ?\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003eBạn muốn l\u0026agrave;m quen với Python ?\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003eBạn muốn tiếp tục để sử dụng th\u0026agrave;nh thạo Python cho c\u0026aacute;c c\u0026ocirc;ng việc kh\u0026aacute;c như trong c\u0026aacute;c lĩnh vực: Machine learning, Lập tr\u0026igrave;nh Web,...?\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp style=\"text-align: justify;\"\u003eKh\u0026oacute;a học n\u0026agrave;y l\u0026agrave; d\u0026agrave;nh cho bạn: Đơn giản, dễ hiểu, thực tế, thực h\u0026agrave;nh trực tiếp ngay sau khi học với nhiều ứng dụng. Bạn c\u0026oacute; thể tiếp cận mọi thứ dễ d\u0026agrave;ng v\u0026agrave; hiệu quả hơn với \"Lập tr\u0026igrave;nh Python cơ bản\" của TEK4.VN.\u003c/p\u003e\n\u003ch2 style=\"text-align: justify;\"\u003eBạn cần l\u0026agrave;m g\u0026igrave; để bắt đầu?\u003c/h2\u003e\n\u003cp style=\"text-align: justify;\"\u003eKh\u0026oacute;a học n\u0026agrave;y được thiết kế cho cả những người mới bắt đầu do đ\u0026oacute;, những g\u0026igrave; bạn cần l\u0026agrave;:\u003c/p\u003e\n\u003cdiv class=\"udlite-block-list-item udlite-block-list-item-small udlite-block-list-item-tight udlite-block-list-item-neutral udlite-text-sm\"\u003e\n\u003cul\u003e\n\u003cli class=\"udlite-block-list-item-content\" style=\"text-align: justify;\"\u003eMột chiếc m\u0026aacute;y t\u0026iacute;nh (Windows, Mac, hoặc Linux), thậm ch\u0026iacute; một chiếc điện thoại c\u0026oacute; c\u0026agrave;i tr\u0026igrave;nh duyệt Web.\u003c/li\u003e\n\u003cli class=\"udlite-block-list-item-content\" style=\"text-align: justify;\"\u003eKH\u0026Ocirc;NG cần biết trước về Python\u003c/li\u003e\n\u003cli class=\"udlite-block-list-item-content\" style=\"text-align: justify;\"\u003eKH\u0026Ocirc;NG cần bất cứ kinh nghiệm lập tr\u0026igrave;nh n\u0026agrave;o.\u003c/li\u003e\n\u003cli class=\"udlite-block-list-item-content\" style=\"text-align: justify;\"\u003eBạn chỉ cần chăm chỉ, chịu kh\u0026oacute; v\u0026agrave; l\u0026agrave;m theo đ\u0026uacute;ng tiến độ đề ra trong Kh\u0026oacute;a học.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e\n\u003ch2 style=\"text-align: justify;\"\u003eNhững c\u0026acirc;u hỏi thường gặp\u003c/h2\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eLiệu t\u0026ocirc;i c\u0026oacute; thể kiếm được việc sau khi ho\u0026agrave;n th\u0026agrave;nh kh\u0026oacute;a học n\u0026agrave;y?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eTất nhi\u0026ecirc;n rồi, điều g\u0026igrave; cũng c\u0026oacute; thể nhưng phụ thuộc v\u0026agrave;o cố gắng của bạn. Kh\u0026oacute;a học n\u0026agrave;y bản th\u0026acirc;n n\u0026oacute; chỉ cung cấp những nền tảng cơ bản nhất, c\u0026ograve;n để đi v\u0026agrave;o thực tế s\u0026acirc;u hơn, bạn cần t\u0026igrave;m hiểu v\u0026agrave; l\u0026agrave;m nhiều hơn thế rất nhiều.\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eT\u0026ocirc;i sẽ mất bao l\u0026acirc;u để ho\u0026agrave;n th\u0026agrave;nh kh\u0026oacute;a học n\u0026agrave;y?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eĐiều n\u0026agrave;y phụ thuộc v\u0026agrave;o hai yếu tố:\u003c/p\u003e\n\u003col style=\"text-align: justify;\"\u003e\n\u003cli\u003eKiến thức nền tảng của bạn. Chắc chắn việc đ\u0026atilde; l\u0026agrave;m quen với lập tr\u0026igrave;nh v\u0026agrave; một số ng\u0026ocirc;n ngữ lập tr\u0026igrave;nh sẽ gi\u0026uacute;p bạn tiếp cận nhanh kh\u0026oacute;a học n\u0026agrave;y hơn.\u003c/li\u003e\n\u003cli\u003eSự tập trung v\u0026agrave; nỗ\u0026nbsp;lực của bạn. Nếu bạn chỉ xem kh\u0026oacute;a học một c\u0026aacute;ch thụ động th\u0026igrave; chắc chắn bạn chỉ mất khoảng chưa đầy một ng\u0026agrave;y l\u0026agrave; c\u0026oacute; thể kết th\u0026uacute;c kh\u0026oacute;a học. Tuy vậy, TEK4.VN kh\u0026ocirc;ng khuyến kh\u0026iacute;ch điều n\u0026agrave;y. Việc xem thụ động chỉ gi\u0026uacute;p bạn lướt qua vấn đề v\u0026agrave; khi gặp một b\u0026agrave;i to\u0026aacute;n thực tế chắc chắn bạn sẽ gặp kh\u0026aacute; nhiều kh\u0026oacute; khăn. Để học tập hiệu quả, bạn n\u0026ecirc;n thực h\u0026agrave;nh, tự suy nghĩ, học một c\u0026aacute;ch chủ động c\u0026aacute;c b\u0026agrave;i tập trước khi xem phần hướng dẫn. Bạn c\u0026agrave;ng chủ động thực h\u0026agrave;nh, luyện tập bao nhi\u0026ecirc;u th\u0026igrave; bạn c\u0026agrave;ng th\u0026agrave;nh thạo bấy nhi\u0026ecirc;u.\u0026nbsp; Trung b\u0026igrave;nh để th\u0026agrave;nh thạo to\u0026agrave;n bộ kh\u0026oacute;a học n\u0026agrave;y sẽ cần bạn đầu tư khoảng 60 giờ. Kh\u0026ocirc;ng qu\u0026aacute; nhiều nếu bạn nghĩ đến viễn cảnh sẽ c\u0026oacute; thể lập tr\u0026igrave;nh một c\u0026aacute;ch th\u0026agrave;nh thạo. Chỉ cần mỗi n\u0026agrave;y bỏ ra khoảng 2 giờ, trong một th\u0026aacute;ng. Kh\u0026ocirc;ng nhiều phải kh\u0026ocirc;ng ạ?\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp style=\"text-align: justify;\"\u003eDựa tr\u0026ecirc;n hai yếu tố tr\u0026ecirc;n, chắc hẳn bạn đ\u0026atilde; c\u0026oacute; thể ước đo\u0026aacute;n được cần bao nhi\u0026ecirc;u thời gian v\u0026agrave; sắp xếp thời gian thế n\u0026agrave;o cho hợp l\u0026yacute; rồi chứ?\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eT\u0026ocirc;i chưa biết lập tr\u0026igrave;nh, liệu t\u0026ocirc;i c\u0026oacute; thể học được kh\u0026oacute;a Lập tr\u0026igrave;nh Python cơ bản n\u0026agrave;y hay kh\u0026ocirc;ng ?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eKh\u0026oacute;a học n\u0026agrave;y được thiết kế cho người mới bắt đầu từ số 0, chưa c\u0026oacute; bất cứ kh\u0026aacute;i niệm n\u0026agrave;o về lập tr\u0026igrave;nh. Do đ\u0026oacute;, c\u0026aacute;c kh\u0026aacute;i niệm được giải th\u0026iacute;ch kh\u0026aacute; kỹ lưỡng. Điều n\u0026agrave;y sẽ gi\u0026uacute;p bạn kh\u0026ocirc;ng những c\u0026oacute; thể hiểu c\u0026aacute;ch sử dụng c\u0026aacute;c kh\u0026aacute;i niệm n\u0026agrave;y trong Python, m\u0026agrave; c\u0026oacute; thể gi\u0026uacute;p bạn hiểu được kh\u0026aacute;i niệm đ\u0026oacute; c\u0026oacute; \u0026yacute; nghĩa như thế n\u0026agrave;o trong lập tr\u0026igrave;nh n\u0026oacute;i chung.\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eKh\u0026oacute;a học n\u0026agrave;y dạy Python 2 hay Python 3?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003ePython 3, chắc chắn rồi. Python 2 hiện nay đ\u0026atilde; kh\u0026ocirc;ng c\u0026ograve;n được hỗ trợ cập nhật v\u0026agrave; chuyển dần sang Python 3. Do đ\u0026oacute;, kh\u0026oacute;a học n\u0026agrave;y sẽ hướng đến Python 3.\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eT\u0026ocirc;i n\u0026ecirc;n d\u0026ugrave;ng tr\u0026igrave;nh soạn thảo hoặc IDE n\u0026agrave;o trong kh\u0026oacute;a học?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eTrong kh\u0026oacute;a học n\u0026agrave;y, ch\u0026uacute;ng ta sử dụng Visual Studio Code. Tuy nhi\u0026ecirc;n, bạn cũng c\u0026oacute; thể sử dụng bất cứ một IDE hoặc tr\u0026igrave;nh soạn thảo n\u0026agrave;o quan thuộc chẳng hạn như: PyCharm, Atom, hay thậm ch\u0026iacute; l\u0026agrave; tr\u0026igrave;nh soạn thảo mặc định IDLE k\u0026egrave;m theo khi c\u0026agrave;i đặt. Tất cả m\u0026atilde; nguồn trong kh\u0026oacute;a học đều c\u0026oacute; thể hoạt động tốt tr\u0026ecirc;n tất cả c\u0026aacute;c m\u0026ocirc;i trường n\u0026agrave;y. Ngo\u0026agrave;i ra, TEK4.VN c\u0026ograve;n cung cấp m\u0026ocirc;i trường soạn thảo v\u0026agrave; bi\u0026ecirc;n dịch trực tiếp phục vụ cho c\u0026aacute;c bạn l\u0026agrave;m b\u0026agrave;i v\u0026agrave; tự động đ\u0026aacute;nh gi\u0026aacute; kết quả trực tuyến ngay ở c\u0026aacute;c b\u0026agrave;i tập. Tr\u0026igrave;nh soạn thảo trực tuyến n\u0026agrave;y sẽ được sử dụng để l\u0026agrave;m c\u0026aacute;c b\u0026agrave;i tập trong kh\u0026oacute;a học.\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eL\u0026agrave;m thế n\u0026agrave;o để ho\u0026agrave;n th\u0026agrave;nh kh\u0026oacute;a học n\u0026agrave;y?\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eĐể ho\u0026agrave;n th\u0026agrave;nh kh\u0026oacute;a học n\u0026agrave;y, bạn cần l\u0026agrave;m đầy đủ c\u0026aacute;c b\u0026agrave;i tập dạng lập tr\u0026igrave;nh v\u0026agrave; dạng trắc nghiệm kiến thức (quiz). C\u0026aacute;c b\u0026agrave;i tập n\u0026agrave;y sẽ được chấm tự động trực tuyến v\u0026agrave; phản hồi lại kết quả ngay lập tức đến người học. Điều n\u0026agrave;y sẽ gi\u0026uacute;p bạn biết tiến độ v\u0026agrave; mức độ nắm bắt kiến thức hiện tại của m\u0026igrave;nh để chủ động điều chỉnh ph\u0026ugrave; hợp.\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eNếu c\u0026oacute; thắc mắc hoặc kh\u0026oacute; hiểu liệu t\u0026ocirc;i c\u0026oacute; thể t\u0026igrave;m sự trợ gi\u0026uacute;p ở đ\u0026acirc;u?\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003eTrong qu\u0026aacute; tr\u0026igrave;nh truy cập v\u0026agrave; học tập nếu gặp vấn đề trong việc giải b\u0026agrave;i tập h\u0026atilde;y trao đổi qua cộng đồng \u003ca class=\"in-cell-link\" href=\"https://www.facebook.com/groups/tek4.vn\" target=\"_blank\" rel=\"noopener\"\u003eTEK4.VN - Học Lập Tr\u0026igrave;nh Miễn Ph\u0026iacute;\u003c/a\u003e để được hỗ trợ giải đ\u0026aacute;p nhanh nhất. C\u0026aacute;c vấn đề kh\u0026aacute;c vui l\u0026ograve;ng nhắn tin trực tiếp \u003cem\u003e\u003cstrong\u003eFanpage Facebook:\u003c/strong\u003e\u0026nbsp;\u003ca href=\"https://www.facebook.com/tek4.vn/\"\u003eTEK4.VN\u003c/a\u003e\u003c/em\u003e để admin giải đ\u0026aacute;p bạn nh\u0026eacute;. Hoặc bạn c\u0026oacute; thể đặt trực tiếp c\u0026aacute;c c\u0026acirc;u hỏi v\u0026agrave;o trong phần b\u0026igrave;nh luận của website.\u003c/p\u003e","duration":80,"isDraft":false,"isFavorite":false,"isJoined":true,"lessonsCount":82,"ownedPoints":1109,"examsCount":177,"totalPoints":4470,"meta":{"seoTitle":"Lập trình Python cơ bản","seoNoindex":"index","seoMetaKeyword":"python cơ bản, lập trình python","seoMetaDescription":"TEK4.VN cung cấp những kiến thức cơ bản về Python với rất nhiều bài tập, ví dụ giúp người học thành thạo Python một cách cơ bản từ con số 0"},"resources":[],"willLearns":["Tự tin lập trình Python từ số 0","Lập trình thực hiện hơn 30 dự án thực tế và 100+ bài tập thực hành","Sử dụng thành thạo các cấu trúc điều khiển, hàm để xử lý các bài toàn bằng Python","Sử dụng thành thạo các kiểu và cấu trúc dữ liệu cơ bản trong Python như: List, Tuple, Set, Dictionary","Làm quen với khái niệm lập trình hướng đối tượng (OOP) qua Python","Biết cách tìm và sử dụng các module, packages để giải quyết các bài toán trong Python","Biết cách xử lý các lỗi khi lập trình Python, Debug chương trình Python","Biết cách viết chương trình Python một cách chuyên nghiệp với Coding Convention"],"programsUsersCount":67264,"certificateVi":"Lập trình Python cơ bản","__typename":"Course"},"lesson":{"content":"\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTrong c\u0026aacute;c b\u0026agrave;i trước, ch\u0026uacute;ng ta đ\u0026atilde; l\u0026agrave;m việc th\u0026agrave;nh thạo với c\u0026aacute;c thao t\u0026aacute;c v\u0026agrave;o ra cơ bản trong Python với h\u0026agrave;m \u003ccode\u003einput()\u003c/code\u003e v\u0026agrave; \u003ccode\u003eprint()\u003c/code\u003e. Nh\u0026igrave;n rất đơn giản đ\u0026uacute;ng kh\u0026ocirc;ng ạ? Đối với h\u0026agrave;m \u003ccode\u003einput()\u003c/code\u003e th\u0026igrave; thực ra cũng kh\u0026ocirc;ng c\u0026oacute; điều g\u0026igrave; phải n\u0026oacute;i th\u0026ecirc;m nhiều về n\u0026oacute;. Tuy nhi\u0026ecirc;n, h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e th\u0026igrave; kh\u0026aacute;c. C\u0026aacute;c bạn sẽ thấy kha kh\u0026aacute; vấn đề trong việc vận dụng h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e một c\u0026aacute;ch th\u0026agrave;nh thạo đấy! V\u0026agrave; việc n\u0026agrave;y cũng li\u0026ecirc;n quan đến việc ch\u0026uacute;ng ta l\u0026agrave;m chủ được đối tượng chuỗi k\u0026yacute; tự như thế n\u0026agrave;o. Trong b\u0026agrave;i n\u0026agrave;y, ch\u0026uacute;ng ta sẽ c\u0026ugrave;ng mổ xẻ để ph\u0026acirc;n t\u0026iacute;ch những thứ hay ho của h\u0026agrave;m n\u0026agrave;y nh\u0026eacute;.\u003cbr /\u003e\u003c/span\u003e\u003c/p\u003e\n\u003ch2\u003e\u003cstrong\u003eH\u0026agrave;m print () trong Python 3\u003c/strong\u003e\u003c/h2\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eVề cơ bản, h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e c\u0026oacute; nhiệm vụ in ra đối tượng đ\u0026atilde; cho tới thiết bị đầu ra ti\u0026ecirc;u chuẩn (m\u0026agrave;n h\u0026igrave;nh) hoặc v\u0026agrave;o tệp d\u0026ograve;ng văn bản (thường \u0026iacute;t d\u0026ugrave;ng)\u003c/span\u003e\u003cspan style=\"font-weight: 400;\"\u003e.\u003c/span\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003e\u003cem\u003eC\u0026uacute; ph\u0026aacute;p đầy đủ của h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e c\u0026oacute; dạng như sau:\u003c/em\u003e\u003c/strong\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\"\u003e\u003ccode\u003eprint(*objects, sep=' ', end='\\n', file=sys.stdout, flush=False)\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cspan style=\"font-weight: 400;\"\u003eTrong đ\u0026oacute;:\u003c/span\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli style=\"font-weight: 400; text-align: justify;\" aria-level=\"1\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eC\u0026aacute;c đối tượng \u003ccode\u003eobjects\u003c/code\u003e l\u0026agrave; (c\u0026aacute;c) gi\u0026aacute; trị sẽ được in ra. N\u0026oacute; l\u0026agrave; c\u0026aacute;c chuỗi k\u0026yacute; tự \u003ccode\u003e\"Hello TEK4.VN\"\u003c/code\u003e, \u003ccode\u003e\"Hello World!\"\u003c/code\u003e,... hoặc c\u0026aacute;c biến, c\u0026aacute;c biểu thức,....ch\u0026uacute;ng ta đ\u0026atilde; học trước đ\u0026acirc;y.\u003cbr /\u003e\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"font-weight: 400; text-align: justify;\" aria-level=\"1\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eDấu ph\u0026acirc;n t\u0026aacute;ch, \u003ccode\u003esep\u003c/code\u003e, l\u0026agrave; c\u0026aacute;c k\u0026yacute; tự được sử dụng để ph\u0026acirc;n t\u0026aacute;ch giữa c\u0026aacute;c đối tượng. N\u0026oacute; mặc định l\u0026agrave; một k\u0026yacute; tự khoảng trắng (\"\u003ccode\u003e \u003c/code\u003e\").\u003cbr /\u003e\u003c/span\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cspan style=\"font-weight: 400;\"\u003e[___NOTE_C\u0026aacute;c bạn h\u0026atilde;y nhớ lại ở c\u0026aacute;c b\u0026agrave;i trước, khi ch\u0026uacute;ng ta ph\u0026acirc;n c\u0026aacute;ch c\u0026aacute;c đối số của h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e bởi dấu \",\", th\u0026igrave; chuỗi k\u0026yacute; tự in ra sẽ mặc định cho ch\u0026uacute;ng ta một khoảng c\u0026aacute;ch giữa c\u0026aacute;c đối số n\u0026agrave;y._NOTE___]\u003c/span\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli style=\"font-weight: 400; text-align: justify;\" aria-level=\"1\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eSau khi tất cả c\u0026aacute;c gi\u0026aacute; trị được in ra, k\u0026yacute; tự kết th\u0026uacute;c, \u003ccode\u003eend\u003c/code\u003e, sẽ được in ra. N\u0026oacute; mặc định l\u0026agrave; một k\u0026yacute; tự xuống d\u0026ograve;ng mới (\u003ccode\u003e\\n\u003c/code\u003e). \u003cbr /\u003e\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"font-weight: 400; text-align: justify;\" aria-level=\"1\"\u003e\u003cspan style=\"font-weight: 400;\"\u003efile l\u0026agrave; đối tượng, nơi m\u0026agrave; c\u0026aacute;c gi\u0026aacute; trị được in ra v\u0026agrave; gi\u0026aacute; trị mặc định của n\u0026oacute; l\u0026agrave; chuẩn đầu ra (m\u0026agrave;n h\u0026igrave;nh). Ch\u0026uacute;ng ta c\u0026oacute; thể chỉ định n\u0026oacute; l\u0026agrave; một tệp tin văn bản, khi đ\u0026oacute; ch\u0026uacute;ng ta sẽ thực hiện việc ghi tệp tin văn bản. Tuy nhi\u0026ecirc;n điều n\u0026agrave;y \u0026iacute;t d\u0026ugrave;ng. Ở b\u0026agrave;i n\u0026agrave;y, ch\u0026uacute;ng ta sẽ sử dụng gi\u0026aacute; trị mặc định của n\u0026oacute; l\u0026agrave; m\u0026agrave;n h\u0026igrave;nh, để in ra m\u0026agrave;n h\u0026igrave;nh.\u003cbr /\u003e\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"font-weight: 400; text-align: justify;\" aria-level=\"1\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTham số \u003ccode\u003eflush\u003c/code\u003e c\u0026oacute; gi\u0026aacute; trị l\u0026agrave; \u003ccode\u003eTrue\u003c/code\u003e hoặc \u003ccode\u003eFalse\u003c/code\u003e. Nếu l\u0026agrave; True, luồng thực thi sẽ được l\u0026agrave;m sạch.\u003c/span\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eV\u0026iacute; dụ 1: \u003c/strong\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\"\u003e\u003ccode\u003ea = 200\nprint('Gi\u0026aacute; trị: ', a)\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cspan style=\"font-weight: 400;\"\u003eKết quả đầu ra:\u003c/span\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\"\u003e\u003ccode\u003eGi\u0026aacute; trị: 200\u003c/code\u003e\u003c/pre\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTrong chương tr\u0026igrave;nh tr\u0026ecirc;n, chỉ tham số \u003ccode\u003eobjects\u003c/code\u003e được truyền cho h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e.\u0026nbsp; Ở đ\u0026acirc;y, tất cả những k\u0026yacute; tự kh\u0026ocirc;ng phải l\u0026agrave; từ kh\u0026oacute;a \u003ccode\u003esep\u003c/code\u003e, \u003ccode\u003eend\u003c/code\u003e, \u003ccode\u003efile\u003c/code\u003e hoặc \u003ccode\u003eflush\u003c/code\u003e đều sẽ được hiểu l\u0026agrave; \u003ccode\u003eobjects\u003c/code\u003e v\u0026agrave; đều được coi như l\u0026agrave; một chuỗi k\u0026yacute; tự để in ra m\u0026agrave;n h\u0026igrave;nh. Ở đ\u0026acirc;y, ch\u0026uacute;ng ta c\u0026oacute; 2 object: 1 l\u0026agrave; chuỗi \u003ccode\u003e'Gi\u0026aacute; trị: '\u003c/code\u003e v\u0026agrave; 1 l\u0026agrave; biến \u003ccode\u003ea\u003c/code\u003e. Tất cả c\u0026aacute;c \u003ccode\u003eobject\u003c/code\u003e n\u0026agrave;y đều được ghi ra m\u0026agrave;n h\u0026igrave;nh theo đ\u0026uacute;ng thứ tự xuất hiện của n\u0026oacute; trong h\u0026agrave;m. \u003cbr /\u003e\u003c/span\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eNgo\u0026agrave;i ra,\u003c/span\u003e\u003c/p\u003e\n\u003cul style=\"text-align: justify;\"\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTham số ph\u0026acirc;n t\u0026aacute;ch, \u003ccode\u003esep\u003c/code\u003e kh\u0026ocirc;ng được thiết lập n\u0026ecirc;n h\u0026agrave;m sẽ nhận đối số mặc định l\u0026agrave; \u003ccode\u003e\u0026lsquo; \u0026rsquo;\u003c/code\u003e được sử dụng để tạo khoảng trống giữa c\u0026aacute;c đối tượng trong kết quả đầu ra.\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTham số \u003ccode\u003eend\u003c/code\u003e cũng mặc định l\u0026agrave; \u003ccode\u003e'\\ n'\u003c/code\u003e (k\u0026yacute; tự xuống d\u0026ograve;ng mới) v\u0026agrave; sau khi in xong c\u0026aacute;c đối tượng tr\u0026ecirc;n th\u0026igrave; chương tr\u0026igrave;nh sẽ xuống d\u0026ograve;ng.\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTệp, \u003ccode\u003efile\u003c/code\u003e, mặc định l\u0026agrave; \u003ccode\u003esys.stdout\u003c/code\u003e. Kết quả đầu ra sẽ được in l\u0026ecirc;n tr\u0026ecirc;n m\u0026agrave;n h\u0026igrave;nh.\u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTham số \u003ccode\u003eflush\u003c/code\u003e c\u0026oacute; gi\u0026aacute; trị mặc định l\u0026agrave; \u003ccode\u003eFalse\u003c/code\u003e. C\u0026oacute; nghĩa l\u0026agrave; luồng thực thi kh\u0026ocirc;ng được l\u0026agrave;m sạch.\u003c/span\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTrong c\u0026acirc;u lệnh \u003ccode\u003eprint()\u003c/code\u003e tr\u0026ecirc;n, ch\u0026uacute;ng ta c\u0026oacute; thể nhận thấy rằng khoảng trắng đ\u0026atilde; được th\u0026ecirc;m v\u0026agrave;o giữa chuỗi k\u0026yacute; tự đầu ti\u0026ecirc;n v\u0026agrave; gi\u0026aacute; trị của biến \u003ccode\u003ea\u003c/code\u003e. Điều n\u0026agrave;y l\u0026agrave; mặc định trong Python v\u0026agrave; đ\u0026atilde; gặp rất nhiều ở c\u0026aacute;c b\u0026agrave;i tập v\u0026agrave; v\u0026iacute; dụ trước, tuy nhi\u0026ecirc;n, ch\u0026uacute;ng ta cũng c\u0026oacute; thể thay đổi điều n\u0026agrave;y.\u003c/span\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eV\u0026iacute; dụ 2:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\"\u003e\u003ccode\u003ea = 5\nprint(\"a =\", a, sep='00000', end='\\n\\n\\n')\nprint(\"a =\", a, sep='0', end='')\nprint(\"OK\")\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e\u003cspan style=\"font-weight: 400;\"\u003eKết quả đầu ra:\u003c/span\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\"\u003e\u003ccode\u003ea =000005\n\n\n\na =05OK\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTrong đoạn m\u0026atilde; tr\u0026ecirc;n, ch\u0026uacute;ng ta đ\u0026atilde; truyền c\u0026aacute;c tham số \u003ccode\u003esep\u003c/code\u003e v\u0026agrave; \u003ccode\u003eend\u003c/code\u003e cho h\u0026agrave;m\u003ccode\u003e print()\u003c/code\u003e. Do đ\u0026oacute;, lệnh \u003ccode\u003eprint()\u003c/code\u003e đầu ti\u0026ecirc;n, chuỗi k\u0026yacute; tự ph\u0026acirc;n t\u0026aacute;ch giữa chuỗi k\u0026yacute; tự đầu ti\u0026ecirc;n v\u0026agrave; biến \u003ccode\u003ea\u003c/code\u003e sẽ l\u0026agrave; 5 số \u003ccode\u003e0\u003c/code\u003e thay v\u0026igrave; khoảng trắng, v\u0026agrave; sau lệnh n\u0026agrave;y, m\u0026agrave;n h\u0026igrave;nh sẽ xuống 3 d\u0026ograve;ng (do 3 dấu \u003ccode\u003e\\n\u003c/code\u003e) chứ kh\u0026ocirc;ng chỉ mặc định xuống 1 d\u0026ograve;ng. \u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTương tự như vậy với c\u0026acirc;u lệnh thứ hai. Theo mặc định, mỗi h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e khi thực thi sẽ in ra c\u0026aacute;c chuỗi k\u0026yacute; tự tr\u0026ecirc;n d\u0026ograve;ng mới. Để tắt gi\u0026aacute; trị c\u0026agrave;i đặt mặc định l\u0026agrave; dấu xuống d\u0026ograve;ng mới n\u0026agrave;y, ch\u0026uacute;ng ta cần chỉ định một chuỗi k\u0026yacute; tự rỗng th\u0026ocirc;ng qua đối số từ kh\u0026oacute;a \u003ccode\u003e\u003cstrong\u003eend\u003c/strong\u003e\u003c/code\u003e của h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e. \u003c/span\u003e\u003cspan style=\"font-weight: 400;\"\u003eỞ c\u0026acirc;u lệnh thứ hai, sau khi in chương tr\u0026igrave;nh sẽ kh\u0026ocirc;ng xuống d\u0026ograve;ng m\u0026agrave; sẽ kết th\u0026uacute;c ngay, do k\u0026yacute; tự cuối l\u0026agrave; k\u0026yacute; tự rỗng. Chuỗi k\u0026yacute; tự rỗng tức l\u0026agrave; chuỗi kh\u0026ocirc;ng chứa bất cứ k\u0026yacute; tự n\u0026agrave;o kể cả khoảng trắng. Để th\u0026ecirc;m v\u0026agrave;o chuỗi n\u0026agrave;y, ta chỉ cần d\u0026ugrave;ng hai dấu nh\u0026aacute;y li\u0026ecirc;n tiếp \u003ccode\u003e''\u003c/code\u003e hoặc \u003ccode\u003e\"\"\u003c/code\u003e. \u003c/span\u003e\u003c/li\u003e\n\u003cli style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eMặc d\u0026ugrave; c\u0026acirc;u lệnh thứ hai v\u0026agrave; thứ ba l\u0026agrave; hai c\u0026acirc;u lệnh \u003ccode\u003eprint()\u003c/code\u003e ri\u0026ecirc;ng biệt, c\u0026oacute; thể thực thi c\u0026aacute;ch nhau với một khoảng thời gian d\u0026agrave;i, nhưng kết quả đầu ra vẫn l\u0026agrave; c\u0026aacute;c chuỗi k\u0026yacute; tự nằm tr\u0026ecirc;n c\u0026ugrave;ng một d\u0026ograve;ng.\u003cbr /\u003e\u003c/span\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003e[___NOTE_Lưu \u0026yacute; rằng: h\u0026agrave;m print() kh\u0026ocirc;ng chỉ nhận một chuỗi k\u0026yacute; tự duy nhất cần được in, m\u0026agrave; h\u0026agrave;m n\u0026agrave;y c\u0026ograve;n c\u0026oacute; thể chấp nhận bất kỳ số lượng n\u0026agrave;o của đối tượng cần in._NOTE___]\u003c/span\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eV\u0026iacute; dụ 3:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre class=\"line-numbers  language-python\" tabindex=\"0\"\u003e\u003ccode\u003eprint('', 'home', 'tek', 'python', sep='/')\u003c/code\u003e\u003c/pre\u003e\n\u003cp style=\"text-align: justify;\"\u003eKết quả đầu ra:\u003c/p\u003e\n\u003cpre class=\"line-numbers  language-markup\" tabindex=\"0\"\u003e\u003ccode\u003e/home/tek/python\u003c/code\u003e\u003c/pre\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cspan style=\"font-weight: 400;\"\u003eTương tự như với tham số \u003ccode\u003esep\u003c/code\u003e trong h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e, bạn c\u0026oacute; thể sử dụng tham số \u003ccode\u003eend\u003c/code\u003e để nối c\u0026aacute;c th\u0026agrave;nh phần ri\u0026ecirc;ng lẻ th\u0026agrave;nh một đoạn văn bản th\u0026agrave;nh một d\u0026ograve;ng bằng dấu ph\u0026acirc;n t\u0026aacute;ch t\u0026ugrave;y chỉnh. Tuy nhi\u0026ecirc;n, thay v\u0026igrave; nối nhiều đối số, n\u0026oacute; sẽ nối văn bản từ mỗi lệnh gọi h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e tr\u0026ecirc;n c\u0026ugrave;ng một d\u0026ograve;ng.\u003c/span\u003e\u003c/p\u003e\n\u003cp style=\"text-align: justify;\"\u003e\u003cstrong\u003eV\u0026iacute; dụ 4:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre class=\"language-python\" tabindex=\"0\"\u003e\u003ccode\u003eprint('First sentence', end='. ')\nprint('Second sentence', end='. ')\nprint('Last sentence\u0026hellip;')\u003c/code\u003e\u003c/pre\u003e\n\u003cp style=\"text-align: justify;\"\u003eKết quả đầu ra:\u003c/p\u003e\n\u003cpre class=\"language-markup\" tabindex=\"0\"\u003e\u003ccode\u003eFirst sentence. Second sentence. Last sentence\u0026hellip;\u003c/code\u003e\u003c/pre\u003e\n\u003cp style=\"text-align: justify;\"\u003eT\u0026oacute;m lại, trong b\u0026agrave;i viết n\u0026agrave;y, ch\u0026uacute;ng ta đ\u0026atilde; c\u0026oacute; c\u0026aacute;i nh\u0026igrave;n chi tiết, đầy đủ hơn về h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e v\u0026agrave; c\u0026aacute;ch thức vận dụng c\u0026aacute;c tham số của n\u0026oacute; để ho\u0026agrave;n th\u0026agrave;nh một số y\u0026ecirc;u cầu cụ thể tr\u0026ecirc;n thực tế. Tiếp theo ch\u0026uacute;ng ta sẽ luyện tập đ\u0026ocirc;i ch\u0026uacute;t về c\u0026aacute;ch sử dụng h\u0026agrave;m \u003ccode\u003eprint()\u003c/code\u003e n\u0026agrave;y với một số b\u0026agrave;i tập đơn giản.\u003c/p\u003e\n\u003cdiv class=\"ddict_btn\" style=\"top: 2312.22px; left: 1306.22px;\"\u003e\u0026nbsp;\u003c/div\u003e","duration":null,"featureImage":null,"id":"7160","video":null,"__typename":"CourseLesson","slug":"nang-cao-voi-ham-print-trong-python","tagList":[],"title":"Nâng cao với hàm print() trong Python","isDraft":false,"meta":{"seoTitle":"Nâng cao với hàm print() trong Python","seoNoindex":"index","seoMetaKeyword":"python, hàm print","seoMetaDescription":"Phân tích hàm print(), cách thức vận dụng các tham số của nó để hoàn thành một số yêu cầu cụ thể trên thực tế"}},"project":null},"__N_SSP":true},"page":"/course/detail-course/[detailCourseSlug]/[detailSectionItemSlug]","query":{"detailCourseSlug":"lap-trinh-python-can-ban","detailSectionItemSlug":"nang-cao-voi-ham-print-trong-python"},"buildId":"ETG1r6Ywh8QF93nVv68DO","runtimeConfig":{"localeSubpaths":{"vi":"vi","en":"en"},"rewritesPaths":[{"source":"/khoa-hoc/:course/assets/FontManifest.json","destination":"/assets/flutter/FontManifest.json"},{"source":"/khoa-hoc/:course/assets/AssetManifest.json","destination":"/assets/flutter/AssetManifest.json"},{"source":"/khoa-hoc/:course/assets/flutter/:path*","destination":"/assets/flutter/:path*"},{"source":"/hoc-tap","destination":"/course/home-course"},{"source":"/khoa-hoc","destination":"/course/list-course"},{"source":"/khoa-hoc/:path*","destination":"/course/detail-course/:path*"},{"source":"/lo-trinh-hoc-tap","destination":"/learning-path/list-learning-path"},{"source":"/lo-trinh-hoc-tap/:path*","destination":"/learning-path/detail-learning-path/:path*"},{"source":"/luyen-tap","destination":"/practice/list-practice"},{"source":"/luyen-tap/bang-xep-hang/:path*","destination":"/practice/detail-practice-ranking/:path*"},{"source":"/luyen-tap/:path*","destination":"/practice/detail-practice/:path*"},{"source":"/luyen-tap/:path*/:subPath*","destination":"/practice/detail-practice/:path*/:subPath*"},{"source":"/du-an","destination":"/project/list-project"},{"source":"/du-an/:path*","destination":"/project/detail-project/:path*"},{"source":"/tutorial","destination":"/tutorial/list-tutorial"},{"source":"/tutorial/:path*/:subPath*","destination":"/tutorial/tutorial-detail/:path*/:subPath*"},{"source":"/cong-dong","destination":"/community/home"},{"source":"/cong-dong/bai-viet-cua-toi/:path*","destination":"/community/my-post/detail/:path*"},{"source":"/tags/:path*","destination":"/community/tags/:path*"},{"source":"/chu-de/:path*","destination":"/community/category/:path*"},{"source":"/kien-thuc","destination":"/community/knowledge"},{"source":"/editor-choice","destination":"/community/editor-choice"},{"source":"/series","destination":"/community/series"},{"source":"/series/:path*","destination":"/community/series/detail/:path*"},{"source":"/tin-tuc","destination":"/community/news"},{"source":"/review","destination":"/community/review"},{"source":"/review/:path*","destination":"/community/review/detail-review/:path*"},{"source":"/top","destination":"/community/top-list"},{"source":"/top/:path*","destination":"/community/top-list/detail/:path*"},{"source":"/hoi-dap","destination":"/community/question"},{"source":"/hoi-dap/:path*","destination":"/community/question/detail/:path*"},{"source":"/gioi-thieu/:path*","destination":"/privacy/:path*"},{"source":"/ho-so/chi-tiet/:path*","destination":"/profile/category/setting-profile/:path*"},{"source":"/p/:path*","destination":"/profile/share-profile/:path*"},{"source":"/ho-so/ki-nang-cua-toi/danh-gia-ki-nang/:path*","destination":"/profile/skill-assessment/:path*"},{"source":"/ho-so/:path*","destination":"/profile/category/:path*"},{"source":"/chung-chi/chi-tiet/:path*","destination":"/certificate/detail-certificate/:path*"},{"source":"/sitemap-:page.xml","destination":"/dynamic-sitemap/:page"},{"source":"/:path","destination":"/community/detail-post/:path"}],"SITE_URL":"https://tek4.vn","NEXT_PUBLIC_API_URL":"https://gql.tek4.vn","NEXT_PUBLIC_CODE_RUNNER_URL":"https://run-service.tek4.vn","NEXT_PUBLIC_SQL_RUNNER_URL":"https://sql-service.tek4.vn","NEXT_PUBLIC_GPT_URL":"https://gpt.tek4.vn","NEXT_PUBLIC_WEB_PREVIEW_URL":"https://web-preview.tek4.vn","NEXT_PUBLIC_API_AUTH_URL":"https://tek4.vn","NEXT_PUBLIC_UPPY_COMPANION_URL":"https://uppy-companion.2soft.top","NEXT_PUBLIC_FILE_URL":"https://tek4.vn","REACT_COUNTDOWN_TIME":"Wed May 31 2023 23:59:59 GMT+0700 (Indochina Time)","NEXT_PUBLIC_GOOGLE_ANALYTICS":"GTM-TSHH4GT","NEXT_PUBLIC_NODE_ENV":"prod","NEXT_PUBLIC_DART_SERVICE_API":"https://dart-api.tek4.vn/api/dartservices/v2"},"isFallback":false,"gssp":true,"appGip":true,"scriptLoader":[{"strategy":"afterInteractive","src":"https://www.googletagmanager.com/gtag/js?id=GTM-TSHH4GT"},{"id":"google-analytics","strategy":"afterInteractive","children":"\n                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n                 j=d.createElement(s),dl=l!='dataLayer'?'\u0026l='+l:'';j.async=true;j.src=\n                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n                 })(window,document,'script','dataLayer','GTM-TSHH4GT');\n              "}]}</script><script src="./Định dạng chuỗi ký tự trong Python_files/js(1)" data-nscript="afterInteractive"></script><iframe allow="join-ad-interest-group" data-tagging-id="AW-10891567072/coukCOj_qbcDEOC_wMko" data-load-time="1720492264617" height="0" width="0" src="./Định dạng chuỗi ký tự trong Python_files/10891567072.html" style="display: none; visibility: hidden;"></iframe><script id="google-analytics" data-nscript="afterInteractive">
+                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                 })(window,document,'script','dataLayer','GTM-TSHH4GT');
+              </script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">Định dạng chuỗi ký tự trong Python</p></next-route-announcer><script src="./Định dạng chuỗi ký tự trong Python_files/index-a8639fbabb6f6cc1.js.tải xuống"></script><style data-rc-order="append" rc-util-key="antd-wave"></style><div class="ddict_btn" style="top: 6311px; left: 379.025px;"><img src="chrome-extension://bpggmmljdiliancllaapiggllnkbjocb/logo/48.png"></div></body></html>

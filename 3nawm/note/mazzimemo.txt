@@ -1,0 +1,92 @@
+Maziiのメモ
+giáo trình Ngữ pháp tiếng anh Mai Lan Hương
+Từ vựng thì vào đây học đi bác : Dunno - Học từ vựng tiếng Anh theo chủ đề hiệu quả
+ "Immerse with migaku addon google dich kanji ra furigana
+Bi ducbtt0402@gmail.com
+****************
+thư viện bumperter, nodejs để tự động đặt lịch (nôm na là thư viện này dùng để mô phỏng 1 loạt thao tác của chrome )
+*********************
+thi ly thuyet bang lai xe nhat :tiktak nha b
+***********************
+外免切替練習コース: course đổi bằng lái
+*******************
+hocj N1:
+theo mình ngôn ngữ nào quan trọng nhất cũng là từ vựng, chính vì thế nên mình không học nhiều ngữ pháp lắm đâu.
+Mình học chữ Hán trước để hiểu hết ý nghĩa của các chữ, sau đó học từ vựng thì mình học 3 quyển (Tango 3000 N1 - nhẹ nhàng - cơ bản, Mimikara Oboeru - siêu nền tảng - trọng tâm, Goi Toreningu - nâng cao - bồi đắp những chỗ cực khó mà 2 quyển kia không có).
+Ngữ pháp mình học Try N1 (cơ bản - nhẹ nhàng) và Shinkanzen (nền tảng, trọng tâm).
+Có từ vựng rồi chắc chắn đọc hiểu sẽ tốt.
+Nghe thì mình chủ yếu nghe tin tức, news từ các kênh như ANN 24H, các youtuber Nhật mình nghe hết, từ Hiro Vlog đến Sasapi Sensei rồi Papaken vân vân.
+*******************
+máy tính bảng thì auto ipad rồi nghĩ làm gì nữa,2man thì lên https://used.sofmap.com/ đầy máy cũ mà ngon
+*******************************
+https://mazii.net/vi-VN/qa/profile/520916
+
+********************************************
+・đam mê 
+ừ thì k có đam mê thì k trèo lên cao nổi đâu :))
+vì đặc thù ngành IT là phải học rất nhiều thứ
+mỗi ngày phải phát triển kỹ năng, bản thân 
+
+ví dụ như từ lúc chat-gpt ra đời đến nay, mới chỉ có hơn 1 năm mà đã thay đổi toàn ngành IT 
+ngày trước những task code đơn giản(code theo như 詳細設計) cần rất nhiều nhân lực
+nhưng bh thì 詳細設計 mà đủ chi tiết thì AI cũng có thể sinh code đc :v
+
+tương ứng với các mức lương thì cần các kỹ năng khác nhau 
+
+p/s: đây là cảm nhận cá nhân của mình, sai thì đừng ném đá tội mình :v
+
+1) nhập môn IT (fresher)
+với mức nenshu thấp nhất, tầm đâu đấy loanh quanh 300man
+thì cần phải có 1~2 năm học hành nghiêm túc, có tư duy về code, về IT thì mới có thể nhập môn đc.
+ở mức này bạn chỉ đại khái biết gõ bừa vài dòng code cho program có thể chạy đc thôi chứ chưa làm gì cao siêu đc :v
+
+nói chung level này thì kiến thức cần học như sau:
+- 1 ngôn ngữ lập trình nào đó 
+- Data structure and Algorithm
+- OOP(Object oriented programming)
+- SQL
+- MVC
+- ....
+nói chung cũng khá nhiều, ngày xưa mỗi ngày học 6-8 tiếng thì mình cũng mất 2 năm để nắm đại khái
+
+2) junior(1~3 năm kinh nghiệm)
+mức này thì nenshu sẽ loanh quanh từ 300~400
+level này thì bạn đại khái đã biết code, biết sử dụng ngôn ngữ, framework, các tool dùng để lập trình, cũng nắm cơ bản về hệ thống
+để đạt đc mức này thì chỉ cần cắm đầu vào code 1 2 năm là đc
+các kiến thức cần cho level này:
+- sử dụng thành thạo 1 ngôn ngữ lập trình nào đó
+- nắm rõ và áp dụng đc các design pattern
+- biết test 
+- nắm rõ và sử dụng thành thạo các tool dùng để lập trình
+- tư duy về software vững hơn 1 tí 
+- ....
+ae bổ sung giúp mình nhé :))
+
+3) middle(3~5 năm kn)
+mức này nenshu chắc khoảng 400~500
+các kiến thức cho mức này như sau
+- nắm rõ kiến thức về server
+- nắm rõ kiến thức về system architecture mình đang sử dụng
+- có khả năng communication tốt, có thể giải thích đc những gì mình muốn nói
+- có thể tự làm việc độc lập, đọc hiểu 基本設計
+- có thể fix những bug khó
+- viết code sạch đẹp :v 
+- có kn qua vài project
+- có thể tự quản lý schedule
+- có kiến thức về http request(nếu làm web)
+- .....
+
+
+**************************************
+Từ vựng: Tango N1 3000 (cơ bản), Mimikara N1 (siêu quan trọng, học hết là đỗ), Tettei Toreningu (nâng cao, muốn phá đảo từ gì cũng biết)
+Đọc hiểu: Shinkanzen N1 (cơ bản, trường bắt học), Dokkai Kouryaku (quyển này rất hay, bài đọc khá sát với đề thi thật)
+Nghe: Luyện nghe News ANN24 mỗi tối, tầm 6-7 tháng gì đó.
+Điều đặc biệt là trước khi đi thi 1,2 tháng thì PHẢI LÀM ĐỀ THI THẬT CÁC NĂM TRƯỚC, lý do là các từ đi thi cho lặp lại khá nhiều, ngoài ra cũng sẽ hiểu được mô típ ra đề thi, cấu trúc đề như thế nào.
+***********************************
+du hoc :Mình đi trường này qua cty du học Kyodai có 3 cơ sở 3 miền, phí và dv ok. Chỉ có cty này mới làm đại diện cho trường ở VN nha. trường mình là 東川日本語学校
+======================
+NƯỚC HOA 
+nam: lelabo gaiac 10, diptyque tam dao, replica jazz club
+nu: le labo 44 paris..
+
+

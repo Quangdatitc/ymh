@@ -1,0 +1,50 @@
+1.Giới thiệu bản thân
+自己紹介してください。
+2.Sở thích của em là gì? Em thường làm việc đó với ai?
+趣味は何ですか。誰としますか。
+3.Em có Visa chưa? Visa còn hạn không?
+ビザが持っていますか。有限がありますか。
+4.Công việc hiện tại là gì?
+今どんな仕事をしていますか。
+5.Phần mềm đang sử dụng trong công việc của em là gì?
+仕事でどんなソフトウェアを使っていますか。
+6.Team của em có mấy người? Em ở vị trí nào trong team? (leader/ sub-leader/ member)
+会社で、またはプロジェクトのチームは何名いますか。あなたのポジションは何ですか。（リーダー/サブリーダー/メンバー）
+7.Có cơ hội nói chuyện/ làm việc với người Nhật không? Leader là người Việt hay người Nhật?
+日本人と話したり働く機会がありますか。リーダーはベトナム人ですか。日本人ですか。
+8.Em làm báo cáo bằng tiếng gì? Bằng phương thức nào? (trực tiếp/ mail/ skype,...) Một tuần báo cáo mấy lần?
+仕事/プロジェクトのレポートはどんな言語で作成しますか。（日本語、ベトナム語、英語）一週間に何回レポートをしますか。
+9.Trong công việc có phải sử dụng tiếng Anh không?
+仕事の中で英語を使っていますか。
+10.Học tiếng Nhật từ bao giờ? Học mấy năm? Học như thế nào ? ( đến trung tâm hay tự học, tần suất học ntn )
+どのぐらい日本語を勉強していますか。どうやって勉強していますか。（日本語センターOr　自分で勉強しています）
+週何回日本語センターに通って（かよって）いますか。
+11.Dự định thi tiếng Nhật như thế nào? Cấp độ nào?
+日本語能力試験（JLPT）を受けるつもりですか。どのレベルですか。
+12.Tại sao muốn sang Nhật làm việc? Muốn ở Nhật làm việc mấy năm? Muốn làm công việc gì?
+どうして日本で働きたいですか。何年間ぐらい日本で働きたいですか。
+どんな仕事をやりたいですか。
+13. Em đã từng đi Nhật chưa?
+日本へ来たことがありますが。
+Nếu chưa: Em tưởng tượng thế nào về Nhật Bản?
+ない場合：日本のことについてどう思いますか。
+Nếu đã từng: Em cảm thấy NB như thế nào?
+ある場合：日本に来てどう感じましたか。
+14.Em có bạn ở Nhật không? Bạn em ở đâu? (Kansai/ Kanto)
+日本に住んでいる友達がいますか。友達はどちら/どんなアレアに住んでいますか。
+15.Em muốn làm việc ở đâu? Vì sao? Nếu làm việc ở vùng khác với nguyện vọng của em thì sao?
+どの地方に働きたいですか。どうしてですか。
+希望と違っている地方で働くのはどうだと思いますか。
+16.Nếu sang Nhật em mong muốn làm công việc ji? Nếu là công việc khác ( thiết kế, đánh giá thử nghiệm...) thì có vấn đề ji không?
+日本に行ったら、どんな仕事をやりたいですか。
+他の仕事なら、大丈夫ですか。
+17.Gia đình em gồm mấy người? Có ủng hộ em đi Nhật không?
+ご家族は何人いますか。あなたが日本で働くことを応援していますか。
+18.Em đã kết hôn chưa? Có ý định đưa vợ con sang Nhật không?
+もう結婚していますか。ご家族を日本へ迎えるつもりがありますか。
+19.Sau khi trúng tuyển, khi nào em có thể đi Nhật được?
+合格したら、いつ来日できますか。
+20.Nếu nghỉ việc cần bao lâu để thu xếp?
+会社を辞めるに時間はどのくらいかかりますか。
+21.Nếu sang Nhật, khoảng 1 tháng sau mới có lương, em có thể chuẩn bị 5~10man yên để mang sang Nhật đc không?
+日本に行ったら、1か月後お給料を貰えます。それで、来日する時、5万円から10万円ぐらいを準備できますか。

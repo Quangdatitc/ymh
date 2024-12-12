@@ -1,0 +1,41 @@
+Xưa làm đọc hiểu em hay sợ mấy cái đuôi này lắm, đọc loạn hết cả lên. Sau khi biết có mẹo này thì nhìn đọc hiểu lẹ hơn. Em chia sẻ cách nhìn với các bác sợ giống em nhé.
+
+「か」 sẽ làm đảo ý phủ định/khẳng định của câu hỏi tu từ thể hiện quan điểm tác giả:
+Khẳng định + か → Phủ định
+Phủ định ＋ か → Khẳng định
+
+Câu tác giả viết 〇〇だろうか？　→　Ý nghĩa thật sự là 〇〇ではない!
+Phân tích:
+Trước だろう là CỘNG (+), か là TRỪ (-) → Kết quả là TRỪ （ではない)
+か luôn là dấu trừ
+
+だれが〇〇するだろうか？　→　だれも〇〇しない！
+する là (+) với か là (-) → (-)　（しない）
+
+誰が〇〇したいだろうか？　→　誰も〇〇したくない！
+(+) với (-) →　(-) （したくない）
+
+なんのために〇〇するのだろうか？　→　〇〇する理由は何もない!
+(+) với (-) →　(-) （理由は何もない）
+
+〇〇と言えるだろうか？　→　〇〇と言えない　 
+ (+) với (-) → (-) （言えない）
+
+Ví dụ:
+１．このままだと学生の成績が変わらないのではないでしょうか。
+Phân tích 3 vị trí: động từ 変わらない, のではない và か
+変わらない là trừ, ない là trừ, か là trừ. 
+Ba trừ thì kết quả là trừ.
+Ý nghĩa của câu này là 変わらない
+
+Cách nhìn nhanh hơn: Các bác cứ thấy のではないでしょうか/のではないだろうか thì cứ bỏ nguyên cái mớ đó, xong thay です vào cho em nhé (vì trừ với trừ là cộng).
+Nên câu trên このままだと学生の成績が変わらない（のではないでしょうか）chính là このままだと学生の成績が変わらないです。
+
+２．では、この木々たちは、ただ植えるだけ、存在するだけでいいのでしょうか。
+①植えるだけ、存在するだけで大丈夫だ
+②植えるだけ、存在するだけで足りない
+Phân tích:
+いい là +, か là trừ, 1 cộng và 1 trừ là trừ → よくない
+Đáp án 2.
+
+Nguồn tham khảo từ Riki.
