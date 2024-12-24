@@ -20,14 +20,16 @@ def resource_path(relative_path):
 # エラー回避
 #参考：https://miya-mitsu.com/python-0x1ferror/
 from msedge.selenium_tools import Edge,EdgeOptions
+config=configparser.ConfigParser(interpolation=None)
 options = EdgeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options.use_chromium = True
 
 
 # ここに追加してください。
-
-url = "http://10.145.156.119:8787/motionboard/main?mbid=fidm2lbeqdxina67nr6aaaf74whwu&boardpath=/アクションボード/ＭＥ製造部生産課/製造技術課/端末稼働監視/アプリケーション動作確認結果"
+config.read("config.ini",encoding='utf-8')
+true_path=config["general"]["default_path"]
+url = true_path
 
 
 path=r".\msedgedriver.exe"
