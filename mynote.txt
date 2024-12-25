@@ -1,0 +1,64 @@
+memes,ymc001,http://pvcy286:8787/motionboard/========10.145.156.119:8787
+
+**************************************************************************
+800さば
+
+\\pvs627\User320\800_ＭＥ製造部生産課
+
+****************************************
+
+--trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org
+
+conda config --set ssl_verify false 
+
+nas:\\133.215.136.79
+
+\\133.215.136.39\ba4\ENSHU 
+
+bao cao hang thang
+\\pvs625\user643\A 部門共通\S DB\S02 業務計画・報告\S0205 F技課\89期\情報システムT
+
+C:\Users\cz68154\build\piptest
+
+https://quizlet.com/vn/741392502/dong-nghia-n2-flash-cards/
+
+M:\A 部門共通\V IoT Smart factory\04 テーマ別\11 データ分析\BIツール\仕損費計算\データ
+http://10.145.156.119:8787/motionboard/main?mbid=fidpafgjifl3ja6zo3aaaafuklpzu&boardpath=%2F%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%89%2F%EF%BC%AD%EF%BC%A5%E8%A3%BD%E9%80%A0%E9%83%A8%E7%94%9F%E7%94%A3%E8%AA%B2%2F%E8%A3%BD%E9%80%A0%E6%8A%80%E8%A1%93%E8%AA%B2%2F%E7%AB%AF%E6%9C%AB%E7%A8%BC%E5%83%8D%E7%9B%A3%E8%A6%96
+
+上記で分からないキーワードがある場合、下調べのおススメは「日本PostgreSQLユーザ会」のサイトです。
+              https://www.postgresql.jp/
+画面上部「ドキュメント」→「バージョンごとのドキュメント一覧」→バージョン11の「PostgreSQL11最新版 日本語マニュアル」から
+袋井南でも使っているPostgreSQL11のリファレンスを確認することができます。
+              https://www.postgresql.jp/document/11/html/
+リファレンスのポイント以下の通りです。
+              ・Ⅰ.チュートリアルの2.3：新しいテーブルの作成
+              ・Ⅱ.SQL言語の5.1：テーブルの基本
+              ・Ⅱ.SQL言語の5.3：制約
+              ・Ⅱ.SQL言語の8.1：数値データ型
+              ・Ⅱ.SQL言語の8.3：文字型
+              ・Ⅱ.SQL言語の8.5：日付/時刻データ型
+              ・Ⅵ.リファレンス、Ⅰ.SQLコマンドの「CREATE TABLE」
+
+大前提として自分のPCにPostgreSQLをインストールしておいてください。
+袋井南で使用しているバージョン11をおススメします。
+不明点は質問してください。
+
+
+休出依頼書ーdang ky lam ngay nghi
+*************************************************************
+\\pvs625\user643\G FA技術課\B 共通\BG 職場管理\BGA 勤務管理\BGAD 休出申請\89期\【89期_基幹職・派遣社員】休日出勤申請.xlsx
+
+
+
+=============================================================---
+tao file bat
+
+CHCP 65001
+cd /D C:\Program Files\KNIME
+knime.exe -nosave --launcher.suppressErrors -nosplash -reset -consoleLog -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="%~dpn0.knwf"
+///////////////////////////////////////////////////////////////////
+
+
+dap-fa
+https://vif-y-dapfa-stg2.ymcapps.net/dap-auth.html?code=490c7a01-661f-4b2c-859f-3ab35ee52dd6 
+
